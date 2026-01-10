@@ -11,6 +11,7 @@ import FAQSection from "./sections/FAQSection";
 import FinalCTASection from "./sections/FinalCTASection";
 import Footer from "./sections/Footer";
 import Benefits from "./sections/Benefits";
+import ExperienceSection from "./sections/Aboutus";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <Benefits />
       <MeetYourCoach />
       <Testimonials />
+      <ExperienceSection/>
       <FAQSection />
       <FinalCTASection />
       <Footer />

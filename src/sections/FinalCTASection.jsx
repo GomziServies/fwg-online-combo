@@ -4,33 +4,36 @@ import BoockBtn from "../components/common/BoockBtn";
 
 const FinalCTASection = () => {
   return (
-    <section id="final-cta" className="bg-[#FF6600] text-white py-8 sm:py-16 px-4 overflow-hidden ">
+    <section
+      id="final-cta"
+      className="bg-white text-gray-900 py-12 sm:py-20 px-4 overflow-hidden border-t border-gray-100"
+    >
       <Container className="text-center">
-        
         <div className="mb-10 sm:mb-14">
-          <p className="text-base sm:text-lg text-white/80 line-through mb-1">
+          <p className="text-base sm:text-lg text-gray-400 line-through mb-1 font-bold">
             Original Value: ₹6999/-
           </p>
-          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black text-black mb-4 tracking-tight">
-            Today&apos;s Price: <span className="text-white">₹2499/- Only</span> 
+          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">
+            Today&apos;s Price:{" "}
+            <span className="text-[#FF6600]">₹2499/- Only</span>
           </h2>
-          <p className="text-sm sm:text-lg md:text-xl text-white/90 font-medium max-w-2xl mx-auto">
-            Seats limited — first come, first serve. Join the transformation today!
+          <p className="text-sm sm:text-lg md:text-xl text-gray-600 font-bold max-w-xl mx-auto">
+            Seats limited — first come, first serve. Join the transformation
+            today!
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-8 justify-center items-center">
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 justify-center items-center">
           <BoockBtn
-            className="w-full max-w-[320px] sm:max-w-sm inline-flex items-center justify-center rounded-xl bg-white px-6 py-4 text-base sm:text-lg font-bold text-[#FF6600] shadow-2xl transition hover:bg-gray-100"
+            className="w-full max-w-[320px] sm:max-w-sm inline-flex items-center justify-center rounded-xl bg-[#FF6600] px-6 py-4 text-base sm:text-lg font-black text-white shadow-2xl shadow-orange-200 transition hover:bg-orange-600 active:scale-95"
             btnnamed="Reserve Your Seat Now"
           />
-          
+
           <BoockBtn
-            className="w-full max-w-[320px] sm:max-w-sm inline-flex items-center justify-center rounded-xl border-2 border-white px-6 py-4 text-base sm:text-lg font-bold text-white shadow-xl transition hover:bg-white/10"
+            className="w-full max-w-[320px] sm:max-w-sm inline-flex items-center justify-center rounded-xl border-2 border-[#FF6600] px-6 py-4 text-base sm:text-lg font-black text-[#FF6600] shadow-sm transition hover:bg-orange-50 active:scale-95"
             btnnamed="Yes! I Want This"
           />
         </div>
-
       </Container>
     </section>
   );

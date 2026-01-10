@@ -111,7 +111,10 @@ const HeroSection = () => {
           </div>
 
           {/* CTA */}
-          <BoockBtn className="relative mt-4 inline-flex w-full max-w-sm items-center justify-center rounded-xl bg-primary px-10 py-2 text-lg font-bold text-white shadow-card md:mx-0" btnnamed={"I Want IN - Reserve My Slot!"} />
+          <BoockBtn
+            className="relative mt-4 inline-flex w-full max-w-sm items-center justify-center rounded-xl bg-primary px-10 py-2 text-lg font-bold text-white shadow-card md:mx-0"
+            btnnamed={"I Want IN - Reserve My Slot!"}
+          />
         </motion.div>
 
         {/* RIGHT CONTENT */}
@@ -156,4 +159,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-

@@ -1,32 +1,38 @@
 import React from "react";
 import Container from "../components/layout/Container";
 import CountdownTimer from "../components/common/CountdownTimer";
+import BoockBtn from "../components/common/BoockBtn";
 
 const UrgencyTimerSection = () => {
   const targetDate = "2026-01-31T18:00:00";
 
   return (
-    <section className="bg-primary text-white py-12">
+    <section className="bg-primary text-white py-12 px-4">
       <Container className="text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+        <p className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-white/80">
           Limited seats · Live online coaching
         </p>
-        <h2 className="mt-3 text-2xl font-bold sm:text-3xl">
-          Next batch starts in: Days • Hours • Minutes • Seconds
+        
+        <h2 className="mt-4 text-2xl sm:text-4xl font-black leading-tight">
+          Next batch starts in:
         </h2>
-        <p className="mt-2 text-sm text-white/85">
-          Seats limited — first come, first serve.
-        </p>
 
-        <div className="mt-6 flex justify-center">
-          <div className="inline-block rounded-2xl border border-white/30 bg-white/10 px-6 py-4 backdrop-blur-sm">
-            <CountdownTimer targetDate={targetDate} size="lg" />
+        <div className="mt-8 flex justify-center">
+          <div className="inline-block rounded-[2.5rem] border-2 border-white/20 bg-white/10 px-8 py-6 backdrop-blur-md shadow-2xl">
+            <CountdownTimer targetDate={targetDate} size="lg" showDays={false} />
           </div>
         </div>
 
-        <button className="mt-6 inline-flex items-center justify-center rounded-md bg-white px-7 py-3 text-sm font-semibold text-primary-dark shadow-md transition hover:bg-slate-50">
-          Reserve My Spot Now
-        </button>
+        <p className="mt-6 text-sm sm:text-lg text-white/90 font-bold italic">
+          Seats limited — first come, first serve.
+        </p>
+
+        <div className="mt-8">
+          <BoockBtn
+            className="inline-flex w-full max-w-md items-center justify-center rounded-2xl bg-white px-10 py-5 text-xl font-black text-primary shadow-xl hover:bg-gray-100 transition-all uppercase tracking-wider"
+            btnnamed="I Want IN - Reserve My Slot!"
+          />
+        </div>
       </Container>
     </section>
   );
