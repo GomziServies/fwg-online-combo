@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Container from "../components/layout/Container";
 import BoockBtn from "../components/common/BoockBtn";
+import BookingModal from "../components/common/BookingModal";
 
 const Footer = () => {
   const [shouldHide, setShouldHide] = useState(false);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,7 +23,38 @@ const Footer = () => {
     };
   }, []);
 
+  // When booking modal is open, hide the footer
+  useEffect(() => {
+    if (isBookingModalOpen) {
+      setShouldHide(true); // Hide the footer when modal is open
+    }
+  }, [isBookingModalOpen]);
+
+  // Also observe if any booking modal is open on the page
+  useEffect(() => {
+    const handleClassChange = () => {
+      if (document.body.classList.contains('booking-modal-open')) {
+        setShouldHide(true); // Hide the footer when any modal is open
+      }
+    };
+
+    const mutationObserver = new MutationObserver(handleClassChange);
+    mutationObserver.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => {
+      mutationObserver.disconnect();
+    };
+  }, []);
+
+  const handleOpenBookingModal = () => {
+    setIsBookingModalOpen(true);
+  };
+
   return (
+    <>
     <footer
       className={`fixed bottom-0 left-0 right-0 z-[100] bg-[#ff6600] border-t border-white/20 py-3 shadow-[0_-10px_40px_rgba(0,0,0,0.2)] transition-all duration-700 ease-in-out ${
         shouldHide
@@ -50,10 +83,17 @@ const Footer = () => {
           <BoockBtn
             btnnamed="Reserve Your Seat Now"
             className="w-full bg-white text-[#FF6600] px-3 sm:px-12 py-2.5 sm:py-3.5 rounded-xl font-black text-[11px] sm:text-sm shadow-xl  transition-all uppercase tracking-tighter sm:tracking-widest"
+            onClick={handleOpenBookingModal}
           />
         </div>
       </Container>
     </footer>
+    
+    <BookingModal 
+      isOpen={isBookingModalOpen} 
+      onClose={() => setIsBookingModalOpen(false)} 
+    />
+    </>
   );
 };
 

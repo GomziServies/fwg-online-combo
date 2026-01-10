@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../components/layout/Container";
 import BoockBtn from "../components/common/BoockBtn";
+import BookingModal from "../components/common/BookingModal";
 
 const steps = [
   {
@@ -30,6 +31,12 @@ const steps = [
 ];
 
 const MeetYourCoach = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
+  const handleOpenBookingModal = () => {
+    setIsBookingModalOpen(true);
+  };
+
   return (
     <section className="bg-white py-10 sm:py-16 overflow-hidden">
       <Container>
@@ -95,9 +102,15 @@ const MeetYourCoach = () => {
           <BoockBtn
             className="bg-[#FF6600] text-white px-12 py-5 rounded-2xl font-black text-xl shadow-xl hover:bg-orange-600 transition-all active:scale-95"
             btnnamed={"Reserve Your Seat Now"}
+            onClick={handleOpenBookingModal}
           />
         </div>
       </Container>
+      
+      <BookingModal 
+        isOpen={isBookingModalOpen} 
+        onClose={() => setIsBookingModalOpen(false)} 
+      />
     </section>
   );
 };

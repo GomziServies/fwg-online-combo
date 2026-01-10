@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../components/layout/Container";
 import BoockBtn from "../components/common/BoockBtn";
+import BookingModal from "../components/common/BookingModal";
 
 const FinalCTASection = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
+  const handleOpenBookingModal = () => {
+    setIsBookingModalOpen(true);
+  };
+
   return (
     <section id="final-cta" className="bg-[#FF6600] text-white py-8 sm:py-16 px-4 overflow-hidden ">
       <Container className="text-center">
@@ -23,15 +30,22 @@ const FinalCTASection = () => {
           <BoockBtn
             className="w-full max-w-[320px] sm:max-w-sm inline-flex items-center justify-center rounded-xl bg-white px-6 py-4 text-base sm:text-lg font-bold text-[#FF6600] shadow-2xl transition hover:bg-gray-100"
             btnnamed="Reserve Your Seat Now"
+            onClick={handleOpenBookingModal}
           />
           
           <BoockBtn
             className="w-full max-w-[320px] sm:max-w-sm inline-flex items-center justify-center rounded-xl border-2 border-white px-6 py-4 text-base sm:text-lg font-bold text-white shadow-xl transition hover:bg-white/10"
             btnnamed="Yes! I Want This"
+            onClick={handleOpenBookingModal}
           />
         </div>
 
       </Container>
+      
+      <BookingModal 
+        isOpen={isBookingModalOpen} 
+        onClose={() => setIsBookingModalOpen(false)} 
+      />
     </section>
   );
 };
