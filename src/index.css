@@ -1,0 +1,48 @@
+/* stylelint-disable at-rule-no-unknown */
+
+@import "tailwindcss";
+
+@theme {
+    /* Custom Font Families - creates font-heading and font-body utilities */
+    --font-heading: "Montserrat", system-ui, sans-serif;
+    --font-body: "Open Sans", system-ui, sans-serif;
+
+    /* Custom Colors - Primary */
+    --color-primary: #FF6600;
+    --color-accent: #FFAA00;
+
+    /* Custom Colors - Text */
+    --color-text: #000000;
+    --color-text-muted: #666666;
+
+    /* Custom Shadows */
+    --shadow-card: 0 12px 30px rgba(15, 23, 42, 0.12);
+
+    /* Custom Max Width */
+    --max-width-content: 1120px;
+}
+
+/* Global typography + background */
+body {
+    @apply font-body bg-white text-text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-heading;
+}
+
+/* Custom classes using @apply */
+.btn-primary {
+    @apply bg-[#f59332] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition;
+}
+
+.section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-900;
+}
+
+/* stylelint-enable at-rule-no-unknown */
