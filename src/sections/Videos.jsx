@@ -154,7 +154,7 @@ const VideoSection = () => {
   return (
     <section className="bg-[#ff6600] py-16 overflow-hidden">
       <Container className="text-center">
-        <h2 className="font-heading text-4xl font-extrabold leading-tight text-white lg:text-5xl">
+        <h2 className="font-heading text-4xl font-extrabold leading-tight text-white lg:text-4xl">
           Real Results From
           <span className="block text-black"> Real People</span>
         </h2>

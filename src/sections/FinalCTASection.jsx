@@ -11,8 +11,8 @@ const FinalCTASection = () => {
           <p className="text-base sm:text-lg text-white/80 line-through mb-1">
             Original Value: ₹6999/-
           </p>
-          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black mb-4 tracking-tight">
-            Today&apos;s Price: <span className="text-black">₹2499/-</span> Only
+          <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black text-black mb-4 tracking-tight">
+            Today&apos;s Price: <span className="text-white">₹2499/- Only</span> 
           </h2>
           <p className="text-sm sm:text-lg md:text-xl text-white/90 font-medium max-w-2xl mx-auto">
             Seats limited — first come, first serve. Join the transformation today!
