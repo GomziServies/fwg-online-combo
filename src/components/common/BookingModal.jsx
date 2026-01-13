@@ -105,7 +105,7 @@ const BookingModal = ({ isOpen, onClose }) => {
     try {
       const options = {
         key: apiConfig.RAZORPAY_MERCHANT_ID,
-        amount: 2499 * 100, // amount in paisa (₹2,499)
+        amount: 2599 * 100, // amount in paisa (₹2,599)
         currency: "INR",
         name: "FG Group",
         description: "Online Combo Course",
@@ -306,7 +306,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                     </svg>
                     Processing...
                   </>
-                ) : "Pay ₹2,499"}
+                ) : "Pay ₹2,599"}
               </button>
             </div>
           </div>

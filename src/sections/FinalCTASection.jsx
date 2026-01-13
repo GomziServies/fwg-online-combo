@@ -22,7 +22,7 @@ const FinalCTASection = () => {
           </p>
           <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">
             Today&apos;s Price:{" "}
-            <span className="text-[#FF6600]">₹2499/- Only</span>
+            <span className="text-[#FF6600]">₹2599/- Only</span>
           </h2>
           <p className="text-sm sm:text-lg md:text-xl text-gray-600 font-bold max-w-xl mx-auto">
             Seats limited — first come, first serve. Join the transformation
