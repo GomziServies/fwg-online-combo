@@ -1,79 +1,82 @@
-import SliderImport from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import VideoSection from "./Videos";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import Container from "../components/layout/Container";
-const Slider = SliderImport.default || SliderImport;
-import VideoSection from "../sections/Videos";
+
+import img1 from "../assets/images/img-1.jpeg";
+import img2 from "../assets/images/img-2.jpeg";
+import img3 from "../assets/images/img-3.jpeg";
+import img4 from "../assets/images/img-4.jpeg";
+import img5 from "../assets/images/img-5.jpeg";
+import img6 from "../assets/images/img-6.jpeg";
+import img7 from "../assets/images/img-7.jpeg";
+import img8 from "../assets/images/img-8.jpeg";
+
+const data = [
+  { image: img1 },
+  { image: img2 },
+  { image: img3 },
+  { image: img4 },
+  { image: img5 },
+  { image: img6 },
+  { image: img7 },
+  { image: img8 },
+];
 
 const Testimonials = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3, // desktop
-    slidesToScroll: 1,
-    centerMode: true, // important for peek
-    centerPadding: "40px", // peek width
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          centerMode: true,
-          centerPadding: "30px",
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          centerMode: true,
-          centerPadding: "20px",
-          arrows: false,
-        },
-      },
-    ],
-  };
-
-  const data = [
-    { image: "/src/assets/images/img-1.jpeg" },
-    { image: "/src/assets/images/img-2.jpeg" },
-    { image: "/src/assets/images/img-3.jpeg" },
-    { image: "/src/assets/images/img-4.jpeg" },
-    { image: "/src/assets/images/img-5.jpeg" },
-    { image: "/src/assets/images/img-6.jpeg" },
-    { image: "/src/assets/images/img-7.jpeg" },
-    { image: "/src/assets/images/img-8.jpeg" },
-  ];
-
   return (
     <section className="bg-[#ff6600] py-14">
       <Container className="text-center">
         <h2 className="mt-4 font-heading text-4xl font-extrabold leading-tight lg:text-4xl">
           Real Results From
-          <span className="text-[#fff]"> Real People</span>
+          <span className="text-white"> Real People</span>
         </h2>
 
-        <div className="mt-12">
-          <Slider {...settings}>
+        <div className="mt-12 absalute overflow-visible">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={24}
+            navigation
+            pagination={{
+              clickable: true,
+            }}
+            loop={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            speed={700}
+            breakpoints={{
+              0: { slidesPerView: 1.2, centeredSlides: true }, // mobile: thodu side preview
+              768: { slidesPerView: 2, centeredSlides: false }, // tablet: exactly 2 slides, no half
+              1280: { slidesPerView: 3, centeredSlides: false }, // desktop: 3 slides
+            }}
+          >
             {data.map((item, index) => (
-              <div key={index} className="px-2">
+              <SwiperSlide key={index}>
                 <div
-                  className="mx-auto rounded-2xl bg-white shadow-lg flex items-center justify-center 
-                w-full max-w-[280px] h-[380px] 
-                sm:max-w-[320px] sm:h-[440px] 
-                md:max-w-none md:w-80 md:h-110"
+                  className="
+                    mx-auto relative rounded-2xl bg-white shadow-lg 
+                    flex items-center justify-center
+                    w-full h-[380px]
+                    sm:max-w-[320px] sm:h-[440px]
+                    md:h-[440px]
+                  "
                 >
                   <img
                     src={item.image}
                     alt={`Image ${index + 1}`}
-                    className="object-contain w-full h-full"
+                    className="h-full w-full object-contain"
                   />
                 </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </Slider>
+          </Swiper>
         </div>
       </Container>
 

@@ -46,3 +46,47 @@ h6 {
 }
 
 /* stylelint-enable at-rule-no-unknown */
+
+
+.slick-slide {
+    display: flex !important;
+    justify-content: center;
+}
+
+.slick-slide>div {
+    width: 100%;
+}
+
+/* mobile ma arrows hide */
+.swiper-button-next,
+.swiper-button-prev {
+    display: none;
+}
+
+/* Swiper navigation buttons */
+.swiper-initialized {
+    padding-bottom: 100px;
+}
+
+.swiper-pagination {
+    top: 520px !important;
+    z-index: 20;
+}
+
+.swiper-pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 14px;
+    width: 14px;
+}
+
+.swiper-pagination-bullet {
+    margin-top: 3px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #fff;
+    height: 14px;
+    width: 14px;
+}

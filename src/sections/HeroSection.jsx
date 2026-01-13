@@ -55,13 +55,20 @@
 
 // export default HeroSection;
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Container from "../components/layout/Container";
 import CountdownTimer from "../components/common/CountdownTimer";
 import BoockBtn from "../components/common/BoockBtn";
+import BookingModal from "../components/common/BookingModal";
 
 const HeroSection = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
+  const handleOpenBookingModal = () => {
+    setIsBookingModalOpen(true);
+  };
+
   const todayDate = new Date().toISOString().split("T")[0];
   const targetTime = `${todayDate}T24:00:00`;
 
@@ -111,12 +118,9 @@ const HeroSection = () => {
           </div>
 
           {/* CTA */}
-          <BoockBtn
-            className="relative mt-4 inline-flex w-full max-w-sm items-center justify-center rounded-xl bg-primary px-10 py-2 text-lg font-bold text-white shadow-card md:mx-0"
-            btnnamed={"I Want IN - Reserve My Slot!"}
-          />
+          <BoockBtn className="relative mt-4 inline-flex w-full max-w-sm items-center justify-center rounded-xl bg-primary px-10 py-2 text-lg font-bold text-white shadow-card md:mx-0" btnnamed={"I Want To Reserve My Slot!"} onClick={handleOpenBookingModal} />
         </motion.div>
-
+        
         {/* RIGHT CONTENT */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
@@ -130,7 +134,7 @@ const HeroSection = () => {
               alt="Program Preview"
               className="h-[260px] object-cover sm:h-[360px] lg:h-[280px]"
             />
-
+        
             {/* Play Icon */}
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90">
@@ -138,7 +142,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-
+        
           {/* Countdown */}
           <div className="mx-auto mt-10 max-w-sm rounded-lg bg-primary p-6 text-white md:mt-14">
             <p className="text-xl font-semibold uppercase tracking-wider text-center">
@@ -153,7 +157,12 @@ const HeroSection = () => {
             </div>
           </div>
         </motion.div>
-      </Container>
+            
+      <BookingModal 
+        isOpen={isBookingModalOpen} 
+        onClose={() => setIsBookingModalOpen(false)} 
+      />
+    </Container>
     </section>
   );
 };

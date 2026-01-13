@@ -69,7 +69,7 @@ const ExperienceSection = () => {
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-3 justify-center lg:justify-start"
+                  className="flex items-center gap-3 justify-center justify-start"
                 >
                   <HiCheckCircle className="text-[#ff6600] w-6 h-6 flex-shrink-0" />
                   <span className="text-gray-800 font-bold text-lg">

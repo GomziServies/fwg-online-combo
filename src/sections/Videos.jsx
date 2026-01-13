@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import SliderImport from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Container from "../components/layout/Container";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-const Slider = SliderImport.default || SliderImport;
-
+// VideoCard Component
 const VideoCard = ({ item, index, activeVideo, setActiveVideo }) => {
   const isStarted = activeVideo === index;
 
@@ -19,20 +20,9 @@ const VideoCard = ({ item, index, activeVideo, setActiveVideo }) => {
   const isInstagram = item.video.includes("instagram.com");
   const videoId = getYouTubeId(item.video);
 
-  const getInstagramEmbed = (url) => {
-    const baseUrl = url.split("?")[0];
-    const finalUrl = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
-    return `${finalUrl}embed`;
-  };
-
   return (
-    <div className="px-3">
-      <div
-        className="relative mx-auto overflow-hidden rounded-[1.5rem] bg-black shadow-2xl 
-                      aspect-[9/15] w-[280px] max-w-[250px] 
-                      sm:aspect-[9/16] sm:max-w-none border-[4px] sm:border-[6px] border-white group 
-                      "
-      >
+    <div className="px-2 outline-none">
+      <div className="relative mx-auto overflow-hidden rounded-[2rem] bg-black shadow-2xl aspect-[9/16] w-full max-w-[260px] sm:max-w-[280px] border-[5px] border-white group">
         {!isStarted ? (
           <div
             className="absolute inset-0 z-10 cursor-pointer"
@@ -43,18 +33,20 @@ const VideoCard = ({ item, index, activeVideo, setActiveVideo }) => {
               className="h-full w-full object-cover"
               alt="thumbnail"
             />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-all">
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
-                <div className="ml-1 border-y-[12px] border-y-transparent border-l-[22px] border-l-[#ff6600]"></div>
+            <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/40 transition-all">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
+                <div className="ml-1 border-y-[10px] border-y-transparent border-l-[18px] border-l-[#ff6600]"></div>
               </div>
             </div>
           </div>
         ) : (
-          <>
+          <div className="w-full h-full" key={`video-${index}`}>
             {isInstagram ? (
               <iframe
                 className="w-full h-full"
-                src={getInstagramEmbed(item.video)}
+                src={`${item.video.split("?")[0]}${
+                  item.video.endsWith("/") ? "" : "/"
+                }embed`}
                 frameBorder="0"
                 scrolling="no"
                 allowTransparency="true"
@@ -64,7 +56,7 @@ const VideoCard = ({ item, index, activeVideo, setActiveVideo }) => {
             ) : videoId ? (
               <iframe
                 className="w-full h-full"
-                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0`}
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0`}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -78,98 +70,94 @@ const VideoCard = ({ item, index, activeVideo, setActiveVideo }) => {
                 playsInline
                 controls
                 loop
+                onPause={() => setActiveVideo(null)}
               ></video>
             )}
-          </>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveVideo(null);
+              }}
+              className="absolute top-4 right-4 z-30 bg-black/60 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-black transition-colors"
+            >
+              ✕
+            </button>
+          </div>
         )}
       </div>
     </div>
   );
 };
 
+// Main VideoSection
 const VideoSection = () => {
   const [activeVideo, setActiveVideo] = useState(null);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: "40px",
-    beforeChange: () => setActiveVideo(null),
-    responsive: [
-      // {
-      //   breakpoint: 1024,
-      //   settings: { slidesToShow: 2, centerPadding: "30px" },
-      // },
-      // { breakpoint: 640, settings: { slidesToShow: 1, centerPadding: "15px" } },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          centerPadding: "30px",
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          centerPadding: "15px",
-          arrows: false,
-        },
-      },
-    ],
-  };
-
-  const data = [
+  const videos = [
     {
       video: "/src/assets/videos/reel-01.mp4",
-      thumbnail: "/src/assets/images/logo2.png",
+      thumbnail: "/src/assets/images/reel-img-01.png",
     },
     {
       video: "/src/assets/videos/reel-02.mp4",
-      thumbnail: "/src/assets/images/logo2.png",
+      thumbnail: "/src/assets/images/reel-img-02.png",
     },
     {
       video: "/src/assets/videos/reel-03.mp4",
-      thumbnail: "/src/assets/images/logo2.png",
+      thumbnail: "/src/assets/images/reel-img-03.png",
     },
     {
       video: "/src/assets/videos/reel-04.mp4",
-      thumbnail: "/src/assets/images/logo2.png",
+      thumbnail: "/src/assets/images/reel-img-04.png",
     },
     {
       video: "/src/assets/videos/reel-05.mp4",
-      thumbnail: "/src/assets/images/logo2.png",
+      thumbnail: "/src/assets/images/reel-img-06.png",
     },
     {
       video: "/src/assets/videos/reel-06.mp4",
-      thumbnail: "/src/assets/images/logo2.png",
+      thumbnail: "/src/assets/images/reel-img-06.png",
     },
   ];
 
   return (
-    <section className="bg-[#ff6600] py-16 overflow-hidden">
+    <section className="bg-[#ff6600] py-14 lg:-mb-30 -mb-20">
       <Container className="text-center">
-        <h2 className="font-heading text-4xl font-extrabold leading-tight text-white lg:text-4xl">
+        <h2 className="mt-4 font-heading text-4xl font-extrabold leading-tight lg:text-4xl">
           Real Results From
-          <span className="block text-black"> Real People</span>
+          <span className="text-white"> Real People</span>
         </h2>
-        <div className="mt-12">
-          <Slider {...settings}>
-            {data.map((item, index) => (
-              <VideoCard
-                key={index}
-                index={index}
-                item={item}
-                activeVideo={activeVideo}
-                setActiveVideo={setActiveVideo}
-              />
+
+        <div className="mt-12 overflow-visible">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={24}
+            navigation
+            pagination={{ clickable: true }}
+            loop={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            speed={700}
+            breakpoints={{
+              0: { slidesPerView: 1.4, centeredSlides: true },
+              768: { slidesPerView: 2, centeredSlides: false },
+              1280: { slidesPerView: 3, centeredSlides: false },
+            }}
+          >
+            {videos.map((item, index) => (
+              <SwiperSlide key={index}>
+                <VideoCard
+                  index={index}
+                  item={item}
+                  activeVideo={activeVideo}
+                  setActiveVideo={setActiveVideo}
+                />
+              </SwiperSlide>
             ))}
-          </Slider>
+          </Swiper>
         </div>
       </Container>
     </section>

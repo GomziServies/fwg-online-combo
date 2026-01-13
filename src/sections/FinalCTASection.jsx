@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../components/layout/Container";
 import BoockBtn from "../components/common/BoockBtn";
+import BookingModal from "../components/common/BookingModal";
 
 const FinalCTASection = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
+  const handleOpenBookingModal = () => {
+    setIsBookingModalOpen(true);
+  };
+
   return (
     <section
       id="final-cta"
@@ -11,7 +18,7 @@ const FinalCTASection = () => {
       <Container className="text-center">
         <div className="mb-10 sm:mb-14">
           <p className="text-base sm:text-lg text-gray-400 line-through mb-1 font-bold">
-            Original Value: ₹6999/-
+            Original Value: ₹4999/-
           </p>
           <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">
             Today&apos;s Price:{" "}
@@ -27,14 +34,21 @@ const FinalCTASection = () => {
           <BoockBtn
             className="w-full max-w-[320px] sm:max-w-sm inline-flex items-center justify-center rounded-xl bg-[#FF6600] px-6 py-4 text-base sm:text-lg font-black text-white shadow-2xl shadow-orange-200 transition hover:bg-orange-600 active:scale-95"
             btnnamed="Reserve Your Seat Now"
+            onClick={handleOpenBookingModal}
           />
 
           <BoockBtn
             className="w-full max-w-[320px] sm:max-w-sm inline-flex items-center justify-center rounded-xl border-2 border-[#FF6600] px-6 py-4 text-base sm:text-lg font-black text-[#FF6600] shadow-sm transition hover:bg-orange-50 active:scale-95"
             btnnamed="Yes! I Want This"
+            onClick={handleOpenBookingModal}
           />
         </div>
       </Container>
+      
+      <BookingModal 
+        isOpen={isBookingModalOpen} 
+        onClose={() => setIsBookingModalOpen(false)} 
+      />
     </section>
   );
 };
