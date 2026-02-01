@@ -29,15 +29,16 @@ const data = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-[#ff6600] py-14">
+    <section className="bg-[#ff6600] sm:py-14 py-8">
       <Container className="text-center">
-        <h2 className="mt-4 font-heading text-4xl font-extrabold leading-tight lg:text-4xl">
+        <h2 className="sm:mt-4 font-heading text-4xl font-extrabold leading-tight lg:text-4xl">
           Real Results From
           <span className="text-white"> Real People</span>
         </h2>
 
-        <div className="mt-12 absalute overflow-visible">
+        <div className="mt-10 absalute overflow-visible">
           <Swiper
+          className="sm:mb-[-60px] lg:mb-[-70px] mb-[-120px]"
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={24}
             navigation
@@ -80,6 +81,7 @@ const Testimonials = () => {
         </div>
       </Container>
 
+      {/* Testimonials videos */}
       <VideoSection />
     </section>
   );

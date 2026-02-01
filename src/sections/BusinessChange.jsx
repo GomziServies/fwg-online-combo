@@ -4,16 +4,16 @@ import WhoFor from "./WhoFor";
 
 const points = [
   {
-    title: "Live Coaching Support",
-    desc: "Trainer-led sessions + recorded access",
+    title: "Metabolism Support ",
+    desc: " Ingredients that that help your body tap into stored fat. ",
   },
   {
-    title: "Proven System",
-    desc: "Fat loss blueprint you follow like a roadmap",
+    title: "Energy & Focus",
+    desc: " Feel energized for daily activity and workouts. ",
   },
   {
-    title: "Included Nutrition + Supplement",
-    desc: "Blueprint + Ignite Fat Burner — all-in-one combo",
+    title: "Tasty & Easy To Use ",
+    desc: "Fruit-Punch / Green Apple — mix & sip. ",
   },
 ];
 
@@ -23,13 +23,19 @@ const BusinessChange = () => {
       <Container>
         {/* Heading */}
         <div className="text-center">
-          <h2 className="font-heading text-4xl font-extrabold leading-tight lg:text-4xl">
-            Why This Program
-            <span className="text-[#fff]"> Actually Works</span>
+          <h2 className="font-heading text-3xl font-extrabold leading-tight lg:text-4xl">
+            WHY BUY
+            <span className="text-[#fff]"> Ignite Fat Burner</span>
           </h2>
-          <span className="block text-xl sm:text-xl font-semibold tracking-widest text-white/80 mt-3">
+          {/* <span className="block text-xl sm:text-xl font-semibold tracking-widest text-white/80 mt-3">
             ( Quick Proof )
-          </span>
+          </span> */}
+          <p className="text-center text-white text-xl mt-4">
+            Ignite Fat Burner is formulated to support your natural fat-burning pathways,
+            increase energy during the day and help you burn stubborn body fat —
+            without extreme diets or hundreds of gym hours. Paired with our free
+            Fitness Blueprint, it's a simple combo that gets results.{" "}
+          </p>
         </div>
 
         {/* Cards */}
@@ -42,7 +48,8 @@ const BusinessChange = () => {
         rounded-xl
         border border-gray-200
         bg-white
-        p-6
+        p-3
+        sm:p-6
         text-center
         transition-all
         duration-300
@@ -68,7 +75,7 @@ const BusinessChange = () => {
         </div>
       </Container>
 
-      {/* 4. Benefits */}
+      {/* What This Ignite Will Help You Achieve */}
       <WhoFor />
     </section>
   );

@@ -17,7 +17,7 @@
 //             Fat-Loss Transformation Program
 //           </p>
 //           <p className="mt-4 text-2xl font-medium text-gray-900">
-//             Online Live Coaching + E-Book + Ignite Fat Burner (250g)
+//             Online Live Coaching + E-Book + Ignite Fat Burner Fat Burner (250g)
 //             <br />
 //             Only ₹2499/- (One-Time Price — Limited Seats!)
 //           </p>
@@ -34,7 +34,7 @@
 //           <div className="relative">
 //             <img
 //               src="/src/assets/images/logo2.png"
-//               alt="Fit people working out with Ignite product visible"
+//               alt="Fit people working out with Ignite Fat Burner product visible"
 //               className="h-full w-full rounded-2xl object-cover"
 //             />
 //             <button className="mt-4 inline-flex items-center justify-center rounded-md bg-[#FF6600] px-7 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#FFAA00]">
@@ -82,9 +82,9 @@ const HeroSection = () => {
           transition={{ duration: 0.4 }}
           className="text-center md:text-left"
         >
-          <span className="inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+          {/* <span className="inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
             28-Day Online Fat Loss Program
-          </span>
+          </span> */}
 
           <h2 className="mt-4 font-heading text-3xl font-extrabold leading-snug sm:text-4xl lg:text-4xl">
             Belly Fat Not Reducing
@@ -94,33 +94,46 @@ const HeroSection = () => {
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl text-lg text-text-muted md:mx-0">
-            Busy routine, weight stuck, motivation gone?
+            Busy routine, weight stuck, motivation gone?{" "}
             <br className="hidden sm:block" />
             <span className="font-semibold text-text">
-              This program is built exactly for that.
+              This Ignite Fat Burner is built exactly for that.
             </span>
           </p>
 
-          <ul className="mx-auto mt-6 max-w-sm space-y-3 text-lg md:mx-0">
-            <li>✓ Weight stuck for months</li>
+          <ul className="mx-auto text-start mt-6 max-w-sm space-y-3 text-lg md:mx-0">
+            {/* <li>✓ Weight stuck for months</li>
             <li>✓ No time for gym</li>
-            <li>✓ Confusing diet plans</li>
+            <li>✓ Confusing diet plans</li> */}
+            <li>✓ Fusion of metabolism-boosting ingredients</li>
+            <li>✓ Delicious Fruit-Punch / Green Apple flavour</li>
+            <li>✓ Supports steady fat loss & energy levels </li>
+            <li>
+              ✓ Free fitness blueprint e-book - <br />
+            </li>
+            <li className="ml-5 mt-[-10px]"> instantly by email </li>
           </ul>
 
           <div className="mx-auto mt-6 inline-block rounded-xl border border-primary/20 bg-primary/5 px-6 py-4 md:mx-0">
-            <p className="font-semibold">
-              Live Coaching + E-Book + Fat Burner (250g)
+            <p className="mt-1 text-4xl font-bold text-primary text-center ">
+              ₹649/-{" "}
+              <span className="text-[20px] font-medium text-text-muted">
+                Only
+              </span>
             </p>
-            <p className="mt-1 text-2xl font-bold text-primary">
-              ₹2499/-{" "}
-              <span className="text-sm font-medium text-text-muted">Only</span>
+            <p className="font-semibold mt-2 text-center text-xl">
+              Free shipping • Delivery within 7 working days • Secure payment
             </p>
           </div>
 
           {/* CTA */}
-          <BoockBtn className="relative mt-4 inline-flex w-full max-w-sm items-center justify-center rounded-xl bg-primary px-10 py-2 text-lg font-bold text-white shadow-card md:mx-0" btnnamed={"I Want To Reserve My Slot!"} onClick={handleOpenBookingModal} />
+          <BoockBtn
+            className="relative mt-4 inline-flex w-[100%] max-w-[100%] items-center justify-center rounded-xl bg-primary px-10 py-4 sm:text-2xl text-sm md:text-xl font-bold text-white shadow-card md:mx-0"
+            btnnamed={"Buy Ignite Fat Burner Now — ₹649 "}
+            onClick={handleOpenBookingModal}
+          />
         </motion.div>
-        
+
         {/* RIGHT CONTENT */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
@@ -134,7 +147,7 @@ const HeroSection = () => {
               alt="Program Preview"
               className="h-[260px] object-cover sm:h-[360px] lg:h-[280px]"
             />
-        
+
             {/* Play Icon */}
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90">
@@ -142,9 +155,9 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-        
+
           {/* Countdown */}
-          <div className="mx-auto mt-10 max-w-sm rounded-lg bg-primary p-6 text-white md:mt-14">
+          {/* <div className="mx-auto mt-10 max-w-sm rounded-lg bg-primary p-6 text-white md:mt-14">
             <p className="text-xl font-semibold uppercase tracking-wider text-center">
               Next Batch Starts In
             </p>
@@ -155,14 +168,14 @@ const HeroSection = () => {
                 align="center"
               />
             </div>
-          </div>
+          </div> */}
         </motion.div>
-            
-      <BookingModal 
-        isOpen={isBookingModalOpen} 
-        onClose={() => setIsBookingModalOpen(false)} 
-      />
-    </Container>
+
+        <BookingModal
+          isOpen={isBookingModalOpen}
+          onClose={() => setIsBookingModalOpen(false)}
+        />
+      </Container>
     </section>
   );
 };
