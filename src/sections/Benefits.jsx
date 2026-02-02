@@ -5,27 +5,27 @@ const benefits = [
   {
     title: "Weight Loss",
     desc: "Lose 4 to 5 Kg",
-    icon: "/src/assets/images/what-this-program-helps-you-achieve-01.svg",
+    icon: "/assets/images/what-this-program-helps-you-achieve-01.svg",
   },
   {
     title: "Body Toning",
     desc: "Reduce belly fat & tone the body for a sharper look",
-    icon: "/src/assets/images/what-this-program-helps-you-achieve-02.svg",
+    icon: "/assets/images/what-this-program-helps-you-achieve-02.svg",
   },
   {
     title: "Healthy Habits",
     desc: "Build sustainable eating habits that last a lifetime",
-    icon: "/src/assets/images/what-this-program-helps-you-achieve-03.svg",
+    icon: "/assets/images/what-this-program-helps-you-achieve-03.svg",
   },
   {
     title: "Confidence",
     desc: "Increase confidence & self-belief in your daily life",
-    icon: "/src/assets/images/what-this-program-helps-you-achieve-04.svg",
+    icon: "/assets/images/what-this-program-helps-you-achieve-04.svg",
   },
   {
     title: "Energy Boost",
     desc: "Reduce fatigue and significantly boost your energy levels",
-    icon: "/src/assets/images/what-this-program-helps-you-achieve-05.svg",
+    icon: "/assets/images/what-this-program-helps-you-achieve-05.svg",
   },
 ];
 

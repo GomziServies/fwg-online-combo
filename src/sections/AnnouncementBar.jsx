@@ -7,7 +7,7 @@ const AnnouncementBar = () => {
       <Container className="flex justify-center pt-8 sm:pt-4 pb-2">
         <div className="flex justify-center">
           <img
-            src="/src/assets/images/logo2.png"
+            src="/assets/images/logo2.png"
             alt="Gomzi logo"
             className="h-20 mx-auto"
           />

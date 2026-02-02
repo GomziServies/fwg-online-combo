@@ -95,28 +95,28 @@ const VideoSection = () => {
 
   const videos = [
     {
-      video: "/src/assets/videos/reel-01.mp4",
-      thumbnail: "/src/assets/images/reel-img-01.png",
+      video: "/assets/videos/reel-01.mp4",
+      thumbnail: "/assets/images/reel-img-01.png",
     },
     {
-      video: "/src/assets/videos/reel-02.mp4",
-      thumbnail: "/src/assets/images/reel-img-02.png",
+      video: "/assets/videos/reel-02.mp4",
+      thumbnail: "/assets/images/reel-img-02.png",
     },
     {
-      video: "/src/assets/videos/reel-03.mp4",
-      thumbnail: "/src/assets/images/reel-img-03.png",
+      video: "/assets/videos/reel-03.mp4",
+      thumbnail: "/assets/images/reel-img-03.png",
     },
     {
-      video: "/src/assets/videos/reel-04.mp4",
-      thumbnail: "/src/assets/images/reel-img-04.png",
+      video: "/assets/videos/reel-04.mp4",
+      thumbnail: "/assets/images/reel-img-04.png",
     },
     {
-      video: "/src/assets/videos/reel-05.mp4",
-      thumbnail: "/src/assets/images/reel-img-06.png",
+      video: "/assets/videos/reel-05.mp4",
+      thumbnail: "/assets/images/reel-img-06.png",
     },
     {
-      video: "/src/assets/videos/reel-06.mp4",
-      thumbnail: "/src/assets/images/reel-img-06.png",
+      video: "/assets/videos/reel-06.mp4",
+      thumbnail: "/assets/images/reel-img-06.png",
     },
   ];
 

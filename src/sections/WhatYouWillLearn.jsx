@@ -42,7 +42,7 @@ const WhatYouWillLearn = () => {
           <div className="grid items-stretch gap-8 lg:grid-cols-2">
             <div className="w-full overflow-hidden rounded-2xl border border-gray-200 bg-slate-50">
               <img
-                src="/src/assets/images/what-you-get-03.jpeg"
+                src="/assets/images/what-you-get-03.jpeg"
                 alt="Live Coaching"
                 className="h-full w-full object-cover"
               />
@@ -83,7 +83,7 @@ const WhatYouWillLearn = () => {
             {/* Image */}
             <div className="order-1 lg:order-2 w-full  overflow-hidden rounded-2xl border border-gray-200 bg-slate-50">
               <img
-                src="/src/assets/images/what-you-get-02.jpeg"
+                src="/assets/images/what-you-get-02.jpeg"
                 alt="E-book"
                 className="h-full w-full object-cover"
               />

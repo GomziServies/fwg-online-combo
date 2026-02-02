@@ -149,7 +149,7 @@ const HeroSection = () => {
         >
           <div className="relative mx-auto w-full  overflow-hidden rounded-2xl bg-black shadow-card">
             <img
-              src="/src/assets/images/hero-banner.png"
+              src="/assets/images/hero-banner.png"
               alt="Program Preview"
             />
 
@@ -197,7 +197,7 @@ const HeroSection = () => {
             {isVideoOpen && (
               <video
                 className="max-w-full max-h-[90vh] h-auto w-auto"
-                src="/src/assets/images/hero-banner.mp4"
+                src="/assets/videos/hero-banner.mp4"
                 autoPlay
                 controls
                 controlsList="nodownload"

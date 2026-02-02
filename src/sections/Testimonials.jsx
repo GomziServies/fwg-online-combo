@@ -5,24 +5,15 @@ import "swiper/css";
 
 import Container from "../components/layout/Container";
 
-import img1 from "../assets/images/img-1.jpeg";
-import img2 from "../assets/images/img-2.jpeg";
-import img3 from "../assets/images/img-3.jpeg";
-import img4 from "../assets/images/img-4.jpeg";
-import img5 from "../assets/images/img-5.jpeg";
-import img6 from "../assets/images/img-6.jpeg";
-import img7 from "../assets/images/img-7.jpeg";
-import img8 from "../assets/images/img-8.jpeg";
-
 const data = [
-  { image: img1 },
-  { image: img2 },
-  { image: img3 },
-  { image: img4 },
-  { image: img5 },
-  { image: img6 },
-  { image: img7 },
-  { image: img8 },
+  { image: "/assets/images/img-1.jpeg" },
+  { image: "/assets/images/img-2.jpeg" },
+  { image: "/assets/images/img-3.jpeg" },
+  { image: "/assets/images/img-4.jpeg" },
+  { image: "/assets/images/img-5.jpeg" },
+  { image: "/assets/images/img-6.jpeg" },
+  { image: "/assets/images/img-7.jpeg" },
+  { image: "/assets/images/img-8.jpeg" },
 ];
 
 const Testimonials = () => {
