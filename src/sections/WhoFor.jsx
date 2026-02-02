@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../components/layout/Container";
 
 const items = [
-  "Lose up to 8–14 kg in 28 days (consistency dependent)",
+  "Lose 4 to 5 kg ",
   "Reduce belly fat & tone the body",
   "Build healthy eating habits",
   "Increase confidence & energy",
@@ -10,11 +10,11 @@ const items = [
 
 const WhoFor = () => {
   return (
-    <section className="bg-[#ff6600] py-14 sm:py-6 lg:mt-6">
+    <section className="bg-[#ff6600] py-6 sm:py-6 lg:mt-6">
       <Container>
         <div className="mt-8 text-center">
-          <h2 className="mt-4 font-heading text-4xl font-extrabold leading-tight lg:text-4xl">
-            What This Program Will
+          <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight lg:text-4xl">
+            What This Ignite Fat Burner Will
             <span className="text-[#fff]"> Help You Achieve</span>
           </h2>
         </div>
@@ -31,7 +31,7 @@ const WhoFor = () => {
           rounded-xl
           border border-gray-200
           bg-white
-          p-6
+          p-4 sm:p-6
           shadow-xl
           transition
           duration-300

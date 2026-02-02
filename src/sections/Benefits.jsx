@@ -4,7 +4,7 @@ import Container from "../components/layout/Container";
 const benefits = [
   {
     title: "Weight Loss",
-    desc: "Lose up to 8–14 kg in 28 days (dependent on consistency)",
+    desc: "Lose 4 to 5 Kg",
     icon: "/src/assets/images/what-this-program-helps-you-achieve-01.svg",
   },
   {
@@ -31,12 +31,12 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section className="bg-[#ff6600] py-14">
+    <section className="bg-[#ff6600] sm:py-14 py-6">
       <Container>
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
           <div className="lg:w-5/12 text-white text-center lg:text-left">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-[#000000]">
-              What This Program
+            <h2 className="text-3xl sm:text-3xl lg:text-4xl font-black leading-tight text-[#000000]">
+              What This Ignite Fat Burner
               <br />
               <span className="text-white opacity-100">Helps You Achieve</span>
             </h2>
@@ -45,12 +45,11 @@ const Benefits = () => {
             <div className="hidden lg:block h-2 w-24 bg-white mt-8 rounded-full"></div>
 
             <p className="lg:mt-8 mt-4 text-white/90 lg:text-xl font-medium max-w-sm mx-auto lg:mx-0">
-              A comprehensive approach to transformation that goes beyond just
-              numbers.
+              Ignite Fat Burner + our Fitness Blueprint helps you fix the basics, stay consistent, and move in the right direction.
             </p>
           </div>
 
-          <div className="lg:w-7/12 grid gap-6 ">
+          <div className="lg:w-7/12 grid sm:gap-3 gap-0 ">
             {benefits.map((b, i) => (
               <div
                 key={i}

@@ -1,6 +1,8 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // <-- import these
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 import AnnouncementBar from "./sections/AnnouncementBar";
 import HeroSection from "./sections/HeroSection";
 import BusinessChange from "./sections/BusinessChange";
@@ -12,23 +14,63 @@ import FinalCTASection from "./sections/FinalCTASection";
 import Footer from "./sections/Footer";
 import Benefits from "./sections/Benefits";
 import ExperienceSection from "./sections/Aboutus";
+import DetailedProductBlock from "./sections/DetailedProductBlock";
+import PrivacyPolicy from "./sections/PrivacyPolicy";
 
-const App = () => {
+const LandingPage = () => {
   return (
-    <div className="bg-white text-text">
+        <div className="bg-white text-text">
+      {/* Top-logo */}
       <AnnouncementBar />
+
+      {/* Belly Fat Not Reducing Even After Diet & Workout? */}
       <HeroSection />
+
+      {/* WHY BUY IGNITE + What This Ignite Will Help You Achieve */}
       <BusinessChange />
+
+      {/* What You Get */}
       <WhatYouWillLearn />
+
+      {/* What This Ignite Helps You Achieve */}
       <Benefits />
+
+      {/* HOW IGNITE WORKS */}
       <MeetYourCoach />
+
+      {/* Testimonials = Real Results From Real People images + videos */}
       <Testimonials />
-      <ExperienceSection/>
+
+      {/* Your Daily Energy & Metabolism Companion */}
+      <DetailedProductBlock />
+
+      {/* Real Experience Real Transformation. */}
+      <ExperienceSection />
+
+      {/* Frequently Asked Questions */}
       <FAQSection />
+
+      {/* footer Today's Price: ₹649/- Only */}
       <FinalCTASection />
+
+      {/* sticky footer */}
       <Footer />
+
+      {/* <PrivacyPolicy /> */}
     </div>
   );
 };
 
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
 export default App;
+

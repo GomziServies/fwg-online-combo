@@ -54,12 +54,13 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Container from "../components/layout/Container";
+import { Link } from "react-router-dom";
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div
       className={`rounded-2xl transition-all duration-300 overflow-hidden ${
-        isOpen ? "bg-white shadow-xl" : "border-b border-white/60"
+        isOpen ? "bg-[#ff6600] shadow-xl" : "border-b border-[#ff6600]/80"
       }`}
     >
       <button
@@ -68,7 +69,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
       >
         <span
           className={`text-base sm:text-xl font-black transition-all duration-300 ${
-            isOpen ? "text-[#ff6600]" : "text-white"
+            isOpen ? "text-[#fff]" : "text-[#ff6600]"
           }`}
         >
           {question}
@@ -78,7 +79,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
           animate={{ rotate: isOpen ? 135 : 0 }}
           transition={{ duration: 0.3 }}
           className={`text-2xl sm:text-3xl font-bold leading-none ${
-            isOpen ? "text-[#ff6600]" : "text-white"
+            isOpen ? "text-[#fff]" : "text-[#ff6600]"
           }`}
         >
           +
@@ -108,44 +109,91 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
+  // const faqs = [
+  //   {
+  //     q: "Is this suitable for beginners?",
+  //     a: "Yes. Designed for all levels, starting from absolute basics.",
+  //   },
+  //   {
+  //     q: "Do I need gym equipment?",
+  //     a: "No. All workouts are 100% home-friendly with zero equipment.",
+  //   },
+  //   {
+  //     q: "What if I miss a live session?",
+  //     a: "You get lifetime access to all recorded sessions instantly.",
+  //   },
+  //   {
+  //     q: "When will I receive the E-Book?",
+  //     a: "Immediately after payment via email and WhatsApp.",
+  //   },
+  //   {
+  //     q: "Ignite Fat Burner delivery time?",
+  //     a: "Usually 3–7 working days across India.",
+  //   },
+  //   {
+  //     q: "Is this program genuine?",
+  //     a: "Transforming 20,000+ lives since 2012 with real science.",
+  //   },
+  //   {
+  //     q: "Are there any refunds?",
+  //     a: "No. We only want serious members committed to results.",
+  //   },
+  // ];
+
   const faqs = [
     {
+      q: "What exactly is the Fitness Blueprint?",
+      a: "A practical 4-week guide with daily routines, simple home workouts, sample meal ideas, and habit trackers — built to work with Ignite Fat Burner to speed up fat-loss when followed consistently.",
+    },
+    {
+      q: "When will I receive the e-book?",
+      a: "Immediately after payment — the PDF is sent to your registered email.",
+    },
+    {
+      q: "How long will shipping take?",
+      a: "Orders are dispatched within 1-2 Working days. Delivery is expected in under 7 working days depending on location.",
+    },
+    {
       q: "Is this suitable for beginners?",
-      a: "Yes. Designed for all levels, starting from absolute basics.",
+      a: "Yes — the Blueprint is created for all levels. Ignite Fat Burner is a supplement — combine it with the Blueprint and a healthy routine.",
     },
     {
-      q: "Do I need gym equipment?",
-      a: "No. All workouts are 100% home-friendly with zero equipment.",
+      q: "Any side effects?",
+      a: "Ignite Fat Burner contains caffeine. Avoid if you are sensitive to stimulants. If you have health conditions, consult your doctor.",
     },
     {
-      q: "What if I miss a live session?",
-      a: "You get lifetime access to all recorded sessions instantly.",
+      q: "How many servings?",
+      a: "250g container — approx. 25-35 gm servings depending on scoop size.",
+    },
+
+    {
+      q: " What if my product is damaged / missing? ",
+      a: "Contact fitnesswithgomzi@gmail.com within 48 hours with order number and photo. We'll try to resolve issues.",
     },
     {
-      q: "When will I receive the E-Book?",
-      a: "Immediately after payment via email and WhatsApp.",
+      q: "Refunds / returns ",
+      a: (
+        <>
+          No refunds, For delivery-damage issues{" "}
+          <Link to="/privacy-policy" className="text-white underline">
+            Privacy & Policy.
+          </Link>
+        </>
+      ),
     },
     {
-      q: "Ignite Fat Burner delivery time?",
-      a: "Usually 3–7 working days across India.",
-    },
-    {
-      q: "Is this program genuine?",
-      a: "Transforming 20,000+ lives since 2012 with real science.",
-    },
-    {
-      q: "Are there any refunds?",
-      a: "No. We only want serious members committed to results.",
+      q: " Can I buy in bulk / for a gym? ",
+      a: " For bulk/partner orders contact fitnesswithgomzi@gmail.com ",
     },
   ];
 
   return (
-    <section className="bg-[#ff6600] py-16 px-4">
+    <section className="bg-[#fff] sm:py-16 py-8 px-4">
       <Container>
-        <div className="text-center mb-12">
+        <div className="text-center sm:mb-12 md:mb-8 mb-4">
           <h2 className="text-3xl sm:text-4xl font-black text-black">
             Frequently Asked
-            <span className="text-white"> Questions</span>
+            <span className="text-[#ff6600]"> Questions</span>
           </h2>
         </div>
 

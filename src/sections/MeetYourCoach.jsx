@@ -5,26 +5,26 @@ import BookingModal from "../components/common/BookingModal";
 
 const steps = [
   {
-    label: "Join the program",
-    desc: "Click the 'Join Now' button and complete payment securely. You'll get instant access to everything.",
+    label: "Order Ignite Fat Burner ",
+    desc: "Click Buy → complete secure checkout. ",
     value: "01",
     icon: "fa-user-plus",
   },
   {
-    label: "Get the E-Book instantly",
-    desc: "Your Fitness Blueprint PDF is auto-delivered to your email instantly. Start reading your meal plans and workout schedule right away.",
+    label: " E-Book Sent Instantly ",
+    desc: "You get the Fitness Blueprint in your email immediately. Start reading — it tells you what to eat, when to move, and daily habit tips. ",
     value: "02",
     icon: "fa-book-open",
   },
   {
-    label: "Start live coaching + receive Ignite",
-    desc: "Attend live Zoom sessions with expert trainers. Receive your Ignite Fat Burner at home within 1-3 days.",
+    label: "Ignite Fat Burner Arrives ",
+    desc: `Product ships same / next Working day. ${" "} Delivery within 7 working days.`,
     value: "03",
     icon: "fa-video",
   },
   {
-    label: "28 days of transformation & support",
-    desc: "Follow the program, track your results, get support from trainers and community. Watch your body transform!",
+    label: " Follow the Blueprint + Use Ignite Fat Burner ",
+    desc: "Use Ignite Fat Burner daily, follow the simple nutritional plan from the e-book and track progress. Consistency = results. ",
     value: "04",
     icon: "fa-trophy",
   },
@@ -38,13 +38,13 @@ const MeetYourCoach = () => {
   };
 
   return (
-    <section className="bg-white py-10 sm:py-16 overflow-hidden">
+    <section className="bg-white py-8 sm:py-16 overflow-hidden">
       <Container>
         {/* Title: Center Aligned */}
-        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12">
-          <h2 className="mb-12 text-center font-heading text-4xl font-extrabold leading-tight lg:text-4xl">
-            How It
-            <span className="text-[#ff6600]"> Works</span>
+        <div className="text-center max-w-4xl mx-auto md:mb-8 sm:mb-12">
+          <h2 className="sm:mb-12 mb-6 text-center font-heading text-4xl font-extrabold leading-tight lg:text-4xl">
+            
+            <span className="text-[#ff6600]">How Ignite Fat Burner Works </span>
           </h2>
         </div>
 
@@ -61,7 +61,7 @@ const MeetYourCoach = () => {
                 }`}
               >
                 {/* STEP CIRCLE – ALWAYS FIRST ON MOBILE */}
-                <div className="relative z-10 mb-6 flex h-14 w-14 items-center justify-center rounded-full border-4 border-white bg-[#FF6600] text-xl font-black text-white shadow-[0_10px_25px_rgba(255,102,0,0.3)] sm:h-16 sm:w-16 sm:text-2xl md:mb-0">
+                <div className="relative z-10 sm:mb-6 mb-2 flex h-14 w-14 items-center justify-center rounded-full border-4 border-white bg-[#FF6600] text-xl font-black text-white shadow-[0_10px_25px_rgba(255,102,0,0.3)] sm:h-16 sm:w-16 sm:text-2xl md:mb-0">
                   {parseInt(step.value)}
                 </div>
 
@@ -73,12 +73,12 @@ const MeetYourCoach = () => {
                       : "md:text-left md:pl-16"
                   }`}
                 >
-                  <div className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full bg-orange-50 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#FF6600] md:mx-0">
+                  <div className="mx-auto sm:mb-4 mb-2 inline-flex items-center gap-2 rounded-full bg-orange-50 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#FF6600] md:mx-0">
                     <i className={`fa-solid ${step.icon}`}></i>
                     Step {step.value}
                   </div>
 
-                  <h3 className="mb-3 text-2xl font-extrabold text-gray-800 sm:text-3xl">
+                  <h3 className="sm:mb-3 mb-1 text-2xl font-extrabold text-gray-800 sm:text-3xl">
                     {step.label}
                   </h3>
 
@@ -95,21 +95,21 @@ const MeetYourCoach = () => {
         </div>
 
         {/* Minimal CTA */}
-        <div className="mt-14 sm:mt-16 text-center">
+        <div className="sm:mt-10 mt-6 text-center">
           {/* <button className="bg-[#FF6600] text-white px-12 py-5 rounded-2xl font-black text-xl shadow-xl hover:bg-orange-600 transition-all active:scale-95">
             START YOUR JOURNEY NOW
           </button> */}
           <BoockBtn
-            className="bg-[#FF6600] text-white px-12 py-5 rounded-2xl font-black text-xl shadow-xl hover:bg-orange-600 transition-all active:scale-95"
-            btnnamed={"Reserve Your Seat Now"}
+            className="bg-[#FF6600] text-white px-12 sm:py-5 py-2 rounded-2xl font-black sm:text-xl text-lg shadow-xl hover:bg-orange-600 transition-all active:scale-95"
+            btnnamed={"Buy Ignite Fat Burner Now"}
             onClick={handleOpenBookingModal}
           />
         </div>
       </Container>
-      
-      <BookingModal 
-        isOpen={isBookingModalOpen} 
-        onClose={() => setIsBookingModalOpen(false)} 
+
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
       />
     </section>
   );

@@ -14,7 +14,7 @@ const CountdownTimer = ({ targetDate }) => {
 
       if (difference > 0) {
         newTimeLeft = {
-          // અહીં આપણે દિવસોને પણ કલાકોમાં ભેળવી દીધા છે જેથી તે દિવસો અલગ ન બતાવે
+    
           hours: Math.floor(difference / (1000 * 60 * 60)),
           minutes: Math.floor((difference / 1000 / 60) % 60),
           seconds: Math.floor((difference / 1000) % 60),

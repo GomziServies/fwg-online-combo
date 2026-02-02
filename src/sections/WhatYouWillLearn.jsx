@@ -1,12 +1,12 @@
 import React from "react";
 import Container from "../components/layout/Container";
 
-const block1 = [
-  "4 weeks of live coaching",
-  "Structured fat-loss workouts",
-  "Learn perfect form",
-  "Motivation & accountability",
-];
+// const block1 = [
+//   "4 weeks of live coaching",
+//   "Structured fat-loss workouts",
+//   "Learn perfect form",
+//   "Motivation & accountability",
+// ];
 
 const block2 = [
   "Daily workout schedules",
@@ -15,11 +15,18 @@ const block2 = [
   "Progress tracker",
 ];
 
-const block3 = [
+// const block3 = [
+//   "Boost metabolism",
+//   "Burn stubborn fat faster",
+//   "Tastes great (Fruit Punch)",
+//   "Delivered to your door",
+// ];
+
+const block1 = [
+  "Fruit Punch or Green Apple",
+  "25-30 gm servings approx.",
+  "Mix with water ",
   "Boost metabolism",
-  "Burn stubborn fat faster",
-  "Tastes great (Fruit Punch)",
-  "Delivered to your door",
 ];
 
 const WhatYouWillLearn = () => {
@@ -30,22 +37,20 @@ const WhatYouWillLearn = () => {
           What You <span className="text-[#ff6600]">Get</span>
         </h2>
 
-        <div className="space-y-14">
+        <div className="space-y-14 sm:pb-28">
           {/* BLOCK 1 */}
           <div className="grid items-stretch gap-8 lg:grid-cols-2">
-            {/* Image */}
             <div className="w-full overflow-hidden rounded-2xl border border-gray-200 bg-slate-50">
               <img
-                src="/src/assets/images/what-you-get-01.jpeg"
+                src="/src/assets/images/what-you-get-03.jpeg"
                 alt="Live Coaching"
                 className="h-full w-full object-cover"
               />
             </div>
 
-            {/* Content */}
             <div className="w-full rounded-2xl border border-gray-200 bg-white p-7 shadow-xl lg:h-[300px]">
               <h3 className="mb-4 text-2xl font-semibold text-gray-900">
-                Live & Recorded Workout Sessions
+                Ignite Fat Burner 250g
               </h3>
               <ul className="space-y-3">
                 {block1.map((item) => (
@@ -63,7 +68,7 @@ const WhatYouWillLearn = () => {
             {/* Content */}
             <div className="order-2 lg:order-1 w-full rounded-2xl border border-gray-200 bg-white p-7 shadow-xl lg:h-[300px]">
               <h3 className="mb-4 text-2xl font-semibold text-gray-900">
-                Fitness Blueprint E-Book
+                + Free Fitness Blueprint E-Book
               </h3>
               <ul className="space-y-3">
                 {block2.map((item) => (
@@ -86,8 +91,8 @@ const WhatYouWillLearn = () => {
           </div>
 
           {/* BLOCK 3 */}
-          <div className="grid items-stretch gap-8 lg:grid-cols-2">
-            {/* Image */}
+          {/* <div className="grid items-stretch gap-8 lg:grid-cols-2">
+          
             <div className="w-full lg:h-[66%] overflow-hidden rounded-2xl border border-gray-200 bg-slate-50">
               <img
                 src="/src/assets/images/what-you-get-03.jpeg"
@@ -96,7 +101,7 @@ const WhatYouWillLearn = () => {
               />
             </div>
 
-            {/* Content */}
+          
             <div className="w-full rounded-2xl border border-gray-200 bg-white p-7 shadow-xl lg:h-[300px]">
               <h3 className="mb-4 text-2xl font-semibold text-gray-900">
                 Ignite Fat Burner — 250g
@@ -110,7 +115,7 @@ const WhatYouWillLearn = () => {
                 ))}
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </Container>
     </section>
