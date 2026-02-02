@@ -147,11 +147,10 @@ const HeroSection = () => {
           transition={{ duration: 0.4, delay: 0.1 }}
           className="w-full max-w-md mt-4"
         >
-          <div className="relative mx-auto w-full max-w-[550px]  overflow-hidden rounded-2xl bg-black shadow-card">
+          <div className="relative mx-auto w-full  overflow-hidden rounded-2xl bg-black shadow-card">
             <img
-              src="/src/assets/images/logo2.png"
+              src="/src/assets/images/hero-banner.png"
               alt="Program Preview"
-              className="h-[260px] object-cover sm:h-[360px] lg:h-[280px]"
             />
 
             {/* Play Icon */}
@@ -190,19 +189,18 @@ const HeroSection = () => {
         <Modal
           isOpen={isVideoOpen}
           onClose={() => setIsVideoOpen(false)}
-          className="max-w-4xl"
+          className="w-auto max-w-xs"
           headerless
           contentClassName="p-0"
         >
-          <div className="aspect-video w-full overflow-hidden rounded-xl">
+          <div className="overflow-hidden rounded-xl">
             {isVideoOpen && (
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube.com/embed/QHR_Djzh0qM?autoplay=1"
-                title="Program Preview"
-                frameBorder="0"
-                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-                allowFullScreen
+              <video
+                className="max-w-full max-h-[90vh] h-auto w-auto"
+                src="/src/assets/images/hero-banner.mp4"
+                autoPlay
+                controls
+                controlsList="nodownload"
               />
             )}
           </div>

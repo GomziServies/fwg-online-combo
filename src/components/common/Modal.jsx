@@ -28,13 +28,13 @@ const Modal = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-4 overflow-y-auto" aria-modal="true" role="dialog">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto" aria-modal="true" role="dialog">
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
 
       <div
         ref={dialogRef}
         tabIndex={-1}
-        className={`relative bg-white rounded-2xl shadow-2xl w-full mx-auto my-8 sm:my-0 transform transition-all duration-200 scale-100 max-h-[90vh] flex flex-col ${className || 'max-w-3xl'}`}
+        className={`relative bg-white rounded-2xl shadow-2xl w-full mx-auto transform transition-all duration-200 scale-100 max-h-[90vh] flex flex-col ${className || 'max-w-3xl'}`}
         onClick={(e) => e.stopPropagation()}
       >
         {!headerless && (
