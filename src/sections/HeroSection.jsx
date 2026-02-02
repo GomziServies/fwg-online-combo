@@ -197,7 +197,7 @@ const HeroSection = () => {
             {isVideoOpen && (
               <video
                 className="max-w-full max-h-[90vh] h-auto w-auto"
-                src="/assets/videos/hero-banner.mp4"
+                src="/assets/images/hero-banner.mp4"
                 autoPlay
                 controls
                 controlsList="nodownload"
