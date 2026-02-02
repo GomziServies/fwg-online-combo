@@ -18,11 +18,11 @@ const FinalCTASection = () => {
       <Container className="text-center">
         <div className="mb-10 sm:mb-14">
           <p className="text-base sm:text-lg text-gray-400 line-through mb-1 font-bold">
-            Original Value: ₹4999/-
+            Original Value: ₹2599/-
           </p>
           <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">
             Today&apos;s Price:{" "}
-            <span className="text-[#FF6600]">₹2599/- Only</span>
+            <span className="text-[#FF6600]">₹649/- Only</span>
           </h2>
           <p className="text-sm sm:text-lg md:text-xl text-gray-600 font-bold max-w-xl mx-auto">
             Seats limited — first come, first serve. Join the transformation
