@@ -61,12 +61,18 @@ import Container from "../components/layout/Container";
 import CountdownTimer from "../components/common/CountdownTimer";
 import BoockBtn from "../components/common/BoockBtn";
 import BookingModal from "../components/common/BookingModal";
+import Modal from "../components/common/Modal";
 
 const HeroSection = () => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const handleOpenBookingModal = () => {
     setIsBookingModalOpen(true);
+  };
+
+  const handleOpenVideo = () => {
+    setIsVideoOpen(true);
   };
 
   const todayDate = new Date().toISOString().split("T")[0];
@@ -149,11 +155,16 @@ const HeroSection = () => {
             />
 
             {/* Play Icon */}
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90">
-                <div className="ml-1 h-0 w-0 border-y-8 border-y-transparent border-l-[14px] border-l-primary" />
-              </div>
-            </div>
+            <button
+              type="button"
+              onClick={handleOpenVideo}
+              aria-label="Play video"
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg">
+                <span className="ml-1 h-0 w-0 border-y-8 border-y-transparent border-l-[14px] border-l-primary" />
+              </span>
+            </button>
           </div>
 
           {/* Countdown */}
@@ -175,6 +186,27 @@ const HeroSection = () => {
           isOpen={isBookingModalOpen}
           onClose={() => setIsBookingModalOpen(false)}
         />
+
+        <Modal
+          isOpen={isVideoOpen}
+          onClose={() => setIsVideoOpen(false)}
+          className="max-w-4xl"
+          headerless
+          contentClassName="p-0"
+        >
+          <div className="aspect-video w-full overflow-hidden rounded-xl">
+            {isVideoOpen && (
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/QHR_Djzh0qM?autoplay=1"
+                title="Program Preview"
+                frameBorder="0"
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                allowFullScreen
+              />
+            )}
+          </div>
+        </Modal>
       </Container>
     </section>
   );

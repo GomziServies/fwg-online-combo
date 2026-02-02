@@ -1,9 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import VideoSection from "./Videos";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 import Container from "../components/layout/Container";
 
@@ -39,12 +37,8 @@ const Testimonials = () => {
         <div className="mt-10 absalute overflow-visible">
           <Swiper
           className="sm:mb-[-60px] lg:mb-[-70px] mb-[-120px]"
-            modules={[Navigation, Pagination, Autoplay]}
+            modules={[Autoplay]}
             spaceBetween={24}
-            navigation
-            pagination={{
-              clickable: true,
-            }}
             loop={true}
             autoplay={{
               delay: 2000,
@@ -80,9 +74,6 @@ const Testimonials = () => {
           </Swiper>
         </div>
       </Container>
-
-      {/* Testimonials videos */}
-      <VideoSection />
     </section>
   );
 };
