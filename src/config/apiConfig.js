@@ -3,12 +3,12 @@ let baseUrl = "http://localhost:80";
 let razorpayMerchantId = "rzp_test_F0TUZmabOwKkhe";
 
 if (
-    hostname === "purego.gomzilifesciences.in" ||
-    hostname === "www.purego.gomzilifesciences.in"
+    hostname === "ignitefitbodyplan.fggroup.in" ||
+    hostname === "www.ignitefitbodyplan.fggroup.in"
 ) {
     baseUrl = "https://api.fggroup.in";
     razorpayMerchantId = "rzp_live_tdfTCMm8C9gJNN";
-} else if (hostname === "test.purego.gomzilifesciences.in") {
+} else if (hostname === "test.ignitefitbodyplan.fggroup.in") {
     baseUrl = "https://dev-api.fggroup.in";
 } else {
     baseUrl = "https://dev-api.fggroup.in";
