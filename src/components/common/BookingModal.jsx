@@ -107,7 +107,7 @@ const BookingModal = ({ isOpen, onClose }) => {
         key: apiConfig.RAZORPAY_MERCHANT_ID,
         amount: 649 * 100, // amount in paisa (₹649)
         currency: "INR",
-        name: "FG Group",
+        name: "Gomzi Consulting Private Limited",
         description: "Online Combo Course",
         handler: async function (response) {
           try {
