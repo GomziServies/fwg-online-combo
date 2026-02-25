@@ -11,8 +11,8 @@ if (
 } else if (hostname === "test.ignitefitbodyplan.fggroup.in") {
     baseUrl = "https://dev-api.fggroup.in";
 } else {
-    // baseUrl = "https://dev-api.fggroup.in";
-    baseUrl = "http://localhost:81";
+    baseUrl = "https://dev-api.fggroup.in";
+    // baseUrl = "http://localhost:80";
 }
 
 export const RAZORPAY_MERCHANT_ID = razorpayMerchantId;

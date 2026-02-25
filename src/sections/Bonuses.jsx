@@ -58,7 +58,7 @@ const Bonuses = () => {
         </div>
 
         <p className="mt-6 text-center text-xs text-text-muted">
-          Total bonus value worth more than the workshop fee – included when you
+          Total bonus value worth more than the workshop fee - included when you
           register now.
         </p>
       </Container>

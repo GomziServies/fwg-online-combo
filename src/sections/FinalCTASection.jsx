@@ -24,14 +24,14 @@ const FinalCTASection = () => {
             Today&apos;s Price: <span className="text-[#fff]">₹649/- Only</span>
           </h2>
           <p className="text-sm sm:text-lg md:text-xl text-white font-bold sm:mt-5 mx-auto">
-            Free shipping • Delivery within 7 working days • Secure payment
+            Free shipping • Delivery within 7 to 14 working days • Secure payment
           </p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 justify-center items-center">
           <BoockBtn
             className="w-full max-w-[320px] sm:max-w-sm inline-flex items-center justify-center rounded-xl bg-[#fff] px-6 py-1 sm:py-4 text-base sm:text-lg text-md font-black text-[#ff6600] shadow-xl active:scale-95"
-            btnnamed="Buy Ignite Fat Burner Now - ₹649/-"
+            btnnamed="Start Transformation At just ₹649/-"
             onClick={handleOpenBookingModal}
           />
         </div>

@@ -1,32 +1,47 @@
 import React from "react";
 import Container from "../components/layout/Container";
 
-// const block1 = [
-//   "4 weeks of live coaching",
-//   "Structured fat-loss workouts",
-//   "Learn perfect form",
-//   "Motivation & accountability",
-// ];
-
-const block2 = [
-  "Daily workout schedules",
-  "Meal plans that burn fat",
-  "Step-by-step nutrition & schedule",
-  "Progress tracker",
-];
-
-// const block3 = [
-//   "Boost metabolism",
-//   "Burn stubborn fat faster",
-//   "Tastes great (Fruit Punch)",
-//   "Delivered to your door",
-// ];
-
-const block1 = [
-  "Fruit Punch or Green Apple",
-  "25-30 gm servings approx.",
-  "Mix with water ",
-  "Boost metabolism",
+const blocks = [
+  {
+    title: "Ignite Fat Burner - 250g",
+    // desc: "A carefully formulated blend designed to support fat metabolism and daily energy levels.",
+    image: "/assets/images/what-you-get-03.jpeg",
+    imageAlt: "Ignite Fat Burner",
+    imageOrder: "left",
+    points: [
+      "Supports calorie burning",
+      "Helps reduce stubborn fat",
+      "Improves focus and activity levels",
+      "Easy to mix and consume",
+    ],
+  },
+  {
+    title: "Daily 1-Hour Live Online Exercise Training",
+    // desc: "You will get access to daily live sessions conducted online. You can join from home.",
+    image: "/assets/images/what-you-get-01.jpeg",
+    imageAlt: "Daily Live Training",
+    imageOrder: "right",
+    points: [
+      "Help you stay disciplined",
+      "Provide guided exercise",
+      "Keep you accountable",
+      "Build consistency",
+    ],
+  },
+  {
+    title: "Free Fitness Blueprint (Digital E-Book)",
+    // desc: "Delivered instantly to your email after purchase. Tells you exactly what to do and how to stay consistent.",
+    image: "/assets/images/what-you-get-02.jpeg",
+    imageAlt: "Fitness Blueprint E-Book",
+    imageOrder: "left",
+    points: [
+      "Simple fat-loss routine",
+      "Home workout guidance",
+      "Basic nutrition direction",
+      "Habit-building strategy",
+      "Easy daily structure",
+    ],
+  },
 ];
 
 const WhatYouWillLearn = () => {
@@ -38,84 +53,44 @@ const WhatYouWillLearn = () => {
         </h2>
 
         <div className="space-y-14 sm:pb-28">
-          {/* BLOCK 1 */}
-          <div className="grid items-stretch gap-8 lg:grid-cols-2">
-            <div className="w-full overflow-hidden rounded-2xl border border-gray-200 bg-slate-50">
-              <img
-                src="/assets/images/what-you-get-03.jpeg"
-                alt="Live Coaching"
-                className="h-full w-full object-cover"
-              />
-            </div>
+          {blocks.map((block, idx) => (
+            <div key={idx} className="grid items-stretch gap-8 lg:grid-cols-2">
 
-            <div className="w-full rounded-2xl border border-gray-200 bg-white p-7 shadow-xl lg:h-[300px]">
-              <h3 className="mb-4 text-2xl font-semibold text-gray-900">
-                Ignite Fat Burner 250g
-              </h3>
-              <ul className="space-y-3">
-                {block1.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-[#FF6600]" />
-                    <p className="text-lg text-gray-800">{item}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+              {/* IMAGE */}
+              <div
+                className={`w-full overflow-hidden rounded-2xl border border-gray-200 bg-slate-50 ${
+                  block.imageOrder === "right" ? "order-1 lg:order-2" : ""
+                }`}
+              >
+                <img
+                  src={block.image}
+                  alt={block.imageAlt}
+                  className="h-full w-full object-cover"
+                />
+              </div>
 
-          {/* BLOCK 2 */}
-          <div className="grid items-stretch gap-8 lg:grid-cols-2">
-            {/* Content */}
-            <div className="order-2 lg:order-1 w-full rounded-2xl border border-gray-200 bg-white p-7 shadow-xl lg:h-[300px]">
-              <h3 className="mb-4 text-2xl font-semibold text-gray-900">
-                + Free Fitness Blueprint E-Book
-              </h3>
-              <ul className="space-y-3">
-                {block2.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-[#FF6600]" />
-                    <p className="text-lg text-gray-800">{item}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              {/* CONTENT */}
+              <div
+                className={`w-full rounded-2xl border border-gray-200 bg-white p-7 shadow-xl ${
+                  block.imageOrder === "right" ? "order-2 lg:order-1" : ""
+                }`}
+              >
+                <h3 className="mb-2 text-2xl font-semibold text-gray-900">
+                  {block.title}
+                </h3>
+                <p className="mb-4 text-gray-500 text-base">{block.desc}</p>
+                <ul className="space-y-3">
+                  {block.points.map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-[#FF6600]" />
+                      <p className="text-lg text-gray-800">{point}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            {/* Image */}
-            <div className="order-1 lg:order-2 w-full  overflow-hidden rounded-2xl border border-gray-200 bg-slate-50">
-              <img
-                src="/assets/images/what-you-get-02.jpeg"
-                alt="E-book"
-                className="h-full w-full object-cover"
-              />
             </div>
-          </div>
-
-          {/* BLOCK 3 */}
-          {/* <div className="grid items-stretch gap-8 lg:grid-cols-2">
-          
-            <div className="w-full lg:h-[66%] overflow-hidden rounded-2xl border border-gray-200 bg-slate-50">
-              <img
-                src="/src/assets/images/what-you-get-03.jpeg"
-                alt="Live Coaching"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-          
-            <div className="w-full rounded-2xl border border-gray-200 bg-white p-7 shadow-xl lg:h-[300px]">
-              <h3 className="mb-4 text-2xl font-semibold text-gray-900">
-                Ignite Fat Burner — 250g
-              </h3>
-              <ul className="space-y-3">
-                {block3.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-[#FF6600]" />
-                    <p className="text-lg text-gray-800">{item}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div> */}
+          ))}
         </div>
       </Container>
     </section>

@@ -11,11 +11,11 @@ const PrivacyPolicy = () => {
         <div className="mx-auto max-w-4xl text-gray-800">
           {/* Title */}
           <h1 className="mb-6 font-heading text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Privacy Policy – Ignite Fat Burner
+            Privacy Policy - Ignite Fat Burner
           </h1>
 
           <p className="mb-6 text-lg leading-relaxed text-gray-600">
-            At <strong>Ignite Fat Burner – Fitness With Gomzi</strong>, we respect
+            At <strong>Ignite Fat Burner - Fitness With Gomzi</strong>, we respect
             your privacy and are committed to protecting the personal information
             you share with us. This Privacy Policy explains how we collect, use,
             store, and protect your data when you visit our website or purchase

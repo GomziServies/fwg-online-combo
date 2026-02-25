@@ -27,6 +27,8 @@ const Footer = () => {
   useEffect(() => {
     if (isBookingModalOpen) {
       setShouldHide(true); // Hide the footer when modal is open
+    } else {
+      setShouldHide(false); // Show the footer when modal is closed
     }
   }, [isBookingModalOpen]);
 
@@ -73,8 +75,8 @@ const Footer = () => {
                 ₹4999
               </span> */}
             </div>
-            <p className="text-[9px] sm:text-[11px] uppercase tracking-tight sm:tracking-wider text-white font-extrabold mt-0.5">
-              Ignite Fat Burner + Free Fitness Blueprint E-Book
+            <p className="text-[9px] sm:text-[11px] uppercase [letter-spacing:1.3px] text-white font-extrabold mt-0.5">
+              Ignite Fat Burner + Daily 1 hour exercise training + Free Fitness Blueprint E-Book
             </p>
           </div>
 

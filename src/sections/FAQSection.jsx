@@ -1,56 +1,3 @@
-// import React from "react";
-// import Container from "../components/layout/Container";
-// import FAQItem from "../components/common/FAQItem";
-
-// const faqs = [
-//   {
-//     q: "When will I get the e-book ?",
-//     a: "Immediately after payment in your email.",
-//   },
-//   {
-//     q: "How are live sessions held ?",
-//     a: "Zoom + recorded sessions.",
-//   },
-//   {
-//     q: "Do I need a gym ?",
-//     a: "No, all workouts are home-based.",
-//   },
-//   {
-//     q: "When will Ignite be shipped ?",
-//     a: "Within 1-3 business days.",
-//   },
-//   {
-//     q: "What if I miss a live session ?",
-//     a: "Recordings are provided.",
-//   },
-// ];
-
-// const FAQSection = () => {
-//   return (
-//     <section className="bg-white py-14 sm:py-16">
-//       <Container>
-
-//         <h2 className="mt-4 text-center font-heading text-4xl font-extrabold leading-tight lg:text-4xl">
-//           Frequently Asked
-//           <span className="text-[#ff6600]"> Questions</span>
-//         </h2>
-//         <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-gray-800">
-//           If you still have a question, you can write to us after going through
-//           these FAQs.
-//         </p>
-
-//         <div className="mx-auto mt-8 max-w-3xl">
-//           {faqs.map((item) => (
-//             <FAQItem key={item.q} question={item.q} answer={item.a} />
-//           ))}
-//         </div>
-//       </Container>
-//     </section>
-//   );
-// };
-
-// export default FAQSection;
-
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Container from "../components/layout/Container";
@@ -109,38 +56,29 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  // const faqs = [
-  //   {
-  //     q: "Is this suitable for beginners?",
-  //     a: "Yes. Designed for all levels, starting from absolute basics.",
-  //   },
-  //   {
-  //     q: "Do I need gym equipment?",
-  //     a: "No. All workouts are 100% home-friendly with zero equipment.",
-  //   },
-  //   {
-  //     q: "What if I miss a live session?",
-  //     a: "You get lifetime access to all recorded sessions instantly.",
-  //   },
-  //   {
-  //     q: "When will I receive the E-Book?",
-  //     a: "Immediately after payment via email and WhatsApp.",
-  //   },
-  //   {
-  //     q: "Ignite Fat Burner delivery time?",
-  //     a: "Usually 3–7 working days across India.",
-  //   },
-  //   {
-  //     q: "Is this program genuine?",
-  //     a: "Transforming 20,000+ lives since 2012 with real science.",
-  //   },
-  //   {
-  //     q: "Are there any refunds?",
-  //     a: "No. We only want serious members committed to results.",
-  //   },
-  // ];
-
   const faqs = [
+   {
+  q: "When will I get access to the online exercise sessions?",
+  a: (
+    <>
+      You will get access starting from{" "}
+      <span className="underline font-semibold">the next day</span>{" "}
+      after your purchase. You can join the batch you selected during registration.
+    </>
+  ),
+},
+    {
+      q: "What are the timings of the online sessions?",
+      a: (
+        <>
+          We currently offer two daily session timings: <br/>Morning: 6:00 AM - 7:00 AM or <br/> Evening: 6:00 PM - 7:00 PM. <br />You can choose any one the batch that fits your schedule.
+        </>
+      ),
+    },
+    {
+      q: "How will I connect to the online exercise sessions?",
+      a: "After your purchase, you will receive an email with your selected batch timing, the session joining details, and instructions about the exercise plan. All information will be clearly shared in your registered email.",
+    },
     {
       q: "What exactly is the Fitness Blueprint?",
       a: "A practical 4-week guide with daily routines, simple home workouts, sample meal ideas, and habit trackers — built to work with Ignite Fat Burner to speed up fat-loss when followed consistently.",
@@ -151,7 +89,7 @@ const FAQSection = () => {
     },
     {
       q: "How long will shipping take?",
-      a: "Orders are dispatched within 1-2 Working days. Delivery is expected in under 7 working days depending on location.",
+      a: "Orders are dispatched within 1-2 Working days. Delivery is expected in under 7 to 14 working days depending on location.",
     },
     {
       q: "Is this suitable for beginners?",
@@ -165,16 +103,27 @@ const FAQSection = () => {
       q: "How many servings?",
       a: "250g container — approx. 25-35 gm servings depending on scoop size.",
     },
-
     {
-      q: " What if my product is damaged / missing? ",
-      a: "Contact fitnesswithgomzi@gmail.com within 48 hours with order number and photo. We'll try to resolve issues.",
-    },
+  q: "What if my product is damaged / missing?",
+  a: (
+    <>
+      Contact{" "}
+    <a
+      
+        href="mailto:fitnesswithgomzi@gmail.com"
+        className="underline font-semibold  transition"
+      >
+        fitnesswithgomzi@gmail.com
+      </a>{" "}
+      within 48 hours with order number and photo. We'll try to resolve issues.
+    </>
+  ),
+},
     {
-      q: "Refunds / returns ",
+      q: "Refunds / returns",
       a: (
         <>
-          No refunds, For delivery-damage issues{" "}
+          No refunds. For delivery-damage issues{" "}
           <Link to="/privacy-policy" className="text-white underline">
             Privacy & Policy.
           </Link>
@@ -182,8 +131,18 @@ const FAQSection = () => {
       ),
     },
     {
-      q: " Can I buy in bulk / for a gym? ",
-      a: " For bulk/partner orders contact fitnesswithgomzi@gmail.com ",
+      q: "Can I buy in bulk / for a gym?",
+      a: (
+        <>
+          For bulk/partner orders, contact{" "}
+          <a
+            href="mailto:fitnesswithgomzi@gmail.com"
+            className="underline font-semibold  transition"
+          >
+            fitnesswithgomzi@gmail.com
+          </a>
+        </>
+      ),
     },
   ];
 

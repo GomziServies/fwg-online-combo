@@ -3,29 +3,29 @@ import Container from "../components/layout/Container";
 
 const benefits = [
   {
-    title: "Weight Loss",
-    desc: "Lose 4 to 5 Kg",
+    title: "Better Fat-Loss Support",
+    desc: "Burns fat more efficiently so results actually show",
     icon: "/assets/images/what-this-program-helps-you-achieve-01.svg",
   },
   {
-    title: "Body Toning",
-    desc: "Reduce belly fat & tone the body for a sharper look",
-    icon: "/assets/images/what-this-program-helps-you-achieve-02.svg",
+    title: "Improved Energy Levels",
+    desc: "Stay active all day without feeling drained",
+    icon: "/assets/images/what-this-program-helps-you-achieve-05.svg",
   },
   {
-    title: "Healthy Habits",
-    desc: "Build sustainable eating habits that last a lifetime",
+    title: "Structured Daily Routine",
+    desc: "A clear plan to follow every single day",
     icon: "/assets/images/what-this-program-helps-you-achieve-03.svg",
   },
   {
-    title: "Confidence",
-    desc: "Increase confidence & self-belief in your daily life",
+    title: "Stronger Consistency",
+    desc: "Stay on track even when motivation is low",
     icon: "/assets/images/what-this-program-helps-you-achieve-04.svg",
   },
   {
-    title: "Energy Boost",
-    desc: "Reduce fatigue and significantly boost your energy levels",
-    icon: "/assets/images/what-this-program-helps-you-achieve-05.svg",
+    title: "More Confidence In Your Body",
+    desc: "See real changes and grow your self-belief daily",
+    icon: "/assets/images/what-this-program-helps-you-achieve-02.svg",
   },
 ];
 
@@ -36,11 +36,11 @@ const Benefits = () => {
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
           <div className="lg:w-5/12 text-white text-center lg:text-left">
             <h2 className="text-3xl sm:text-3xl lg:text-4xl font-black leading-tight text-[#000000]">
-              What This Ignite Fat Burner
+               WHAT THIS SYSTEM
               <br />
-              <span className="text-white opacity-100">Helps You Achieve</span>
+              <span className="text-white opacity-100">HELPS YOU ACHIEVE</span>
             </h2>
-
+          
             {/* Arrow / Line → desktop only */}
             <div className="hidden lg:block h-2 w-24 bg-white mt-8 rounded-full"></div>
 

@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom"; // <-- import these
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -16,6 +16,8 @@ import Benefits from "./sections/Benefits";
 import ExperienceSection from "./sections/Aboutus";
 import DetailedProductBlock from "./sections/DetailedProductBlock";
 import PrivacyPolicy from "./sections/PrivacyPolicy";
+import WhyBuyToday from "./components/common/WhyBuyToday";
+import BookingModal from "./components/common/BookingModal";
 
 const LandingPage = () => {
   return (
@@ -62,15 +64,33 @@ const LandingPage = () => {
 };
 
 const App = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
+  const handleOpenBookingModal  = () => setIsBookingModalOpen(true);
+  const handleCloseBookingModal = () => setIsBookingModalOpen(false);
+
   return (
     <BrowserRouter>
+
+      {/* ── WhyBuyToday button click → BookingModal open ── */}
+      <WhyBuyToday handleOpenBookingModal={handleOpenBookingModal} />
+
+      {/* ── BookingModal globally mounted ── */}
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={handleCloseBookingModal}
+      />
+
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/"
+          element={<LandingPage handleOpenBookingModal={handleOpenBookingModal} />}
+        />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
+
     </BrowserRouter>
   );
 };
 
 export default App;
-

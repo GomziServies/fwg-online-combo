@@ -76,7 +76,7 @@ const DetailedProductBlock = () => {
           <div className="mt-6 md:mt-8 sm:mt-16 text-center">
             <BoockBtn
               className="rounded-full bg-[#ff6600] px-10 py-3 text-lg font-semibold text-white transition hover:bg-orange-600 shadow-md"
-              btnnamed={"Buy Ignite Fat Burner Now"}
+              btnnamed={"Start Transformation At just ₹649/-"}
               onClick={handleOpenBookingModal}
             />
           </div>

@@ -4,16 +4,16 @@ import WhoFor from "./WhoFor";
 
 const points = [
   {
-    title: "Metabolism Support ",
-    desc: " Ingredients that that help your body tap into stored fat. ",
+    title: "Ignite Fat Burner",
+    desc: "Enhances metabolism and energy to accelerate natural fat burning.",
   },
   {
-    title: "Energy & Focus",
-    desc: " Feel energized for daily activity and workouts. ",
+    title: "Free Fitness Blueprint",
+    desc: "Instant email access to a clear, step-by-step fat loss roadmap.",
   },
   {
-    title: "Tasty & Easy To Use ",
-    desc: "Fruit-Punch / Green Apple — mix & sip. ",
+    title: "Daily Live Training",
+    desc: "Daily 1-hour live coaching to ensure consistency, accountability, and real results.",
   },
 ];
 
@@ -24,18 +24,17 @@ const BusinessChange = () => {
         {/* Heading */}
         <div className="text-center">
           <h2 className="font-heading text-3xl font-extrabold leading-tight lg:text-4xl">
-            WHY BUY
-            <span className="text-[#fff]"> Ignite Fat Burner</span>
+            Introducing 
+            <span className="text-[#fff]"> The Complete System </span>
           </h2>
-          {/* <span className="block text-xl sm:text-xl font-semibold tracking-widest text-white/80 mt-3">
-            ( Quick Proof )
-          </span> */}
-          <p className="text-center text-white text-xl mt-4">
-            Ignite Fat Burner is formulated to support your natural fat-burning pathways,
-            increase energy during the day and help you burn stubborn body fat —
-            without extreme diets or hundreds of gym hours. Paired with our free
-            Fitness Blueprint, it's a simple combo that gets results.{" "}
-          </p>
+          <span className="block text-lg sm:text-xl font-semibold tracking-widest text-white/80 mb-3 uppercase">
+           One Product. One Blueprint. One Daily Routine.
+          </span>
+          {/* <p className="text-center text-white text-xl mt-4 max-w-2xl mx-auto">
+            When you purchase Ignite, you are not just buying a supplement.
+          </p> */}
+
+
         </div>
 
         {/* Cards */}
@@ -44,21 +43,21 @@ const BusinessChange = () => {
             <div
               key={item.title}
               className="
-        group
-        rounded-xl
-        border border-gray-200
-        bg-white
-        p-3
-        sm:p-6
-        text-center
-        transition-all
-        duration-300
-        shadow-xl
-        hover:shadow-2xl
-        ease-out
-        shadow-sm
-        hover:-translate-y-2
-      "
+                group
+                rounded-xl
+                border border-gray-200
+                bg-white
+                p-3
+                sm:p-6
+                text-center
+                transition-all
+                duration-300
+                shadow-xl
+                hover:shadow-2xl
+                ease-out
+                shadow-sm
+                hover:-translate-y-2
+              "
             >
               {/* Accent line */}
               <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[#FF6600]/80 transition group-hover:bg-[#FF6600]" />

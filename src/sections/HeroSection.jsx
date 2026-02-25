@@ -81,82 +81,92 @@ const HeroSection = () => {
   return (
     <section className="bg-white text-text font-body">
       <Container className="grid items-center gap-4 py-4 md:grid-cols-2 lg:gap-16 lg:py-8">
-        {/* LEFT CONTENT */}
+        {/* LEFT CONTENT */ }
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          initial={ { opacity: 0, y: 20 } }
+          animate={ { opacity: 1, y: 0 } }
+          transition={ { duration: 0.4 } }
           className="text-center md:text-left"
         >
           {/* <span className="inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
             28-Day Online Fat Loss Program
           </span> */}
 
-          <h2 className="mt-4 font-heading text-3xl font-extrabold leading-snug sm:text-4xl lg:text-4xl">
-            Belly Fat Not Reducing
-            <span className="mt-1 block text-primary">
-              Even After Diet & Workout?
+          <h1 className="mt-4 font-heading text-3xl font-extrabold leading-snug sm:text-4xl lg:text-4xl">
+            Transform Your Body with
+            <span className="mt-1 px-2 text-primary">
+              Ignite Fat Burner Only ₹649
             </span>
-          </h2>
+
+          </h1>
 
           <p className="mx-auto mt-4 max-w-xl text-lg text-text-muted md:mx-0">
-            Busy routine, weight stuck, motivation gone?{" "}
-            <br className="hidden sm:block" />
+            {/* <br className="hidden sm:block" /> */ }
             <span className="font-semibold text-text">
-              This Ignite Fat Burner is built exactly for that.
+              Get Ignite Fat Burner, a Free Fitness Blueprint, and access to Daily 1-Hour Live Online Exercise Training — all in one powerful system.
             </span>
+
           </p>
 
-          <ul className="mx-auto text-start mt-6 max-w-sm space-y-3 text-lg md:mx-0">
-            {/* <li>✓ Weight stuck for months</li>
-            <li>✓ No time for gym</li>
-            <li>✓ Confusing diet plans</li> */}
-            <li>✓ Fusion of metabolism-boosting ingredients</li>
-            <li>✓ Delicious Fruit-Punch / Green Apple flavour</li>
-            <li>✓ Supports steady fat loss & energy levels </li>
-            <li>
-              ✓ Free fitness blueprint e-book - <br />
-            </li>
-            <li className="ml-5 mt-[-10px]"> instantly by email </li>
+          <ul className="mx-auto mt-6 max-w-lg list-disc space-y-3 pl-5 text-start text-lg md:mx-0">
+
+            <li>Boosts metabolism for faster fat burning</li>
+
+            <li>Helps target stubborn belly fat</li>
+
+            <li>Supports consistent fat loss</li>
+
+            <li>Improves daily energy & activity</li>
+
+            <li>1-hour daily live training sessions</li>
+
+            <li>Free Fitness Blueprint included Instantly delivered to your email</li>
+
           </ul>
 
-          <div className="mx-auto mt-6 inline-block rounded-xl border border-primary/20 bg-primary/5 px-6 py-4 md:mx-0">
-            <p className="mt-1 text-4xl font-bold text-primary text-center ">
-              ₹649/-{" "}
-              <span className="text-[20px] font-medium text-text-muted">
-                Only
-              </span>
-            </p>
-            <p className="font-semibold mt-2 text-center text-xl">
-              Free shipping • Delivery within 7 working days • Secure payment
-            </p>
+
+
+
+
+          <div className="hidden md:block">
+            <div className="mx-auto mt-6 inline-block rounded-xl border border-primary/20 bg-primary/5 px-6 py-4 md:mx-0">
+              <p className="mt-1 text-4xl font-bold text-primary text-center">
+                ₹649/-
+              </p>
+
+              <p className="font-semibold mt-2 text-center text-xl">
+                • Free delivery within 7-14 working days. <br />
+                • Secure checkout.
+              </p>
+            </div>
+
+            <BoockBtn
+              className="relative mt-4 inline-flex w-[100%] max-w-[100%] items-center justify-center rounded-xl bg-primary px-10 py-4 sm:text-2xl text-sm md:text-xl font-bold text-white shadow-card md:mx-0"
+              btnnamed={ "Start Transformation At just ₹649/- " }
+              onClick={ handleOpenBookingModal }
+            />
           </div>
 
-          {/* CTA */}
-          <BoockBtn
-            className="relative mt-4 inline-flex w-[100%] max-w-[100%] items-center justify-center rounded-xl bg-primary px-10 py-4 sm:text-2xl text-sm md:text-xl font-bold text-white shadow-card md:mx-0"
-            btnnamed={"Buy Ignite Fat Burner Now — ₹649 "}
-            onClick={handleOpenBookingModal}
-          />
+
         </motion.div>
 
-        {/* RIGHT CONTENT */}
+        {/* RIGHT CONTENT */ }
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
+          initial={ { opacity: 0, scale: 0.96 } }
+          animate={ { opacity: 1, scale: 1 } }
+          transition={ { duration: 0.4, delay: 0.1 } }
           className="w-full max-w-md mt-4"
         >
           <div className="relative mx-auto w-full  overflow-hidden rounded-2xl bg-black shadow-card">
             <img
-              src="/assets/images/hero-banner.png"
+              src="/assets/images/hero-banner.webp"
               alt="Program Preview"
             />
 
-            {/* Play Icon */}
+            {/* Play Icon */ }
             <button
               type="button"
-              onClick={handleOpenVideo}
+              onClick={ handleOpenVideo }
               aria-label="Play video"
               className="absolute inset-0 flex items-center justify-center"
             >
@@ -166,7 +176,7 @@ const HeroSection = () => {
             </button>
           </div>
 
-          {/* Countdown */}
+          {/* Countdown */ }
           {/* <div className="mx-auto mt-10 max-w-sm rounded-lg bg-primary p-6 text-white md:mt-14">
             <p className="text-xl font-semibold uppercase tracking-wider text-center">
               Next Batch Starts In
@@ -179,22 +189,40 @@ const HeroSection = () => {
               />
             </div>
           </div> */}
+          <div className="mx-auto mt-6 inline-block rounded-xl border border-primary/20 bg-primary/5 px-6 py-4 md:mx-0 md:hidden">
+            {/* <span className="text-[20px] font-medium text-text-muted text-center mx-auto block">
+                -: Only One Time Payment :-
+              </span> */}
+            <p className="mt-1 text-4xl font-bold text-primary text-center ">
+              ₹649/-{ " " }
+            </p>
+            <p className="font-semibold mt-2 text-center text-xl">
+              {/* Free shipping  Delivery within 7 working days • Secure payment */ }
+              • Free delivery within 7-14 working days. <br />• Secure checkout.
+            </p>
+            <BoockBtn
+              className="relative mt-4 inline-flex w-[100%] max-w-[100%] items-center justify-center rounded-xl bg-primary px-10 py-4 sm:text-2xl text-sm md:text-xl font-bold text-white shadow-card md:mx-0"
+              btnnamed={ "Start Transformation At just ₹649/- " }
+              onClick={ handleOpenBookingModal }
+            />
+          </div>
+
         </motion.div>
 
         <BookingModal
-          isOpen={isBookingModalOpen}
-          onClose={() => setIsBookingModalOpen(false)}
+          isOpen={ isBookingModalOpen }
+          onClose={ () => setIsBookingModalOpen(false) }
         />
 
         <Modal
-          isOpen={isVideoOpen}
-          onClose={() => setIsVideoOpen(false)}
+          isOpen={ isVideoOpen }
+          onClose={ () => setIsVideoOpen(false) }
           className="w-auto max-w-xs"
           headerless
           contentClassName="p-0"
         >
           <div className="overflow-hidden rounded-xl">
-            {isVideoOpen && (
+            { isVideoOpen && (
               <video
                 className="max-w-full max-h-[90vh] h-auto w-auto"
                 src="/assets/images/hero-banner.mp4"
@@ -202,10 +230,18 @@ const HeroSection = () => {
                 controls
                 controlsList="nodownload"
               />
-            )}
+            ) }
           </div>
         </Modal>
       </Container>
+      {/* CTA Button — image ની નીચે */ }
+      {/* <div className="flex w-full justify-center mt-6">
+            <BoockBtn
+              className="inline-flex items-center justify-center rounded-xl bg-primary px-10 py-4 sm:text-2xl text-sm md:text-xl font-bold text-white shadow-card"
+              btnnamed={"Buy Ignite Now and Start Your Transformation"}
+              onClick={handleOpenBookingModal}
+            />
+          </div> */}
     </section>
   );
 };

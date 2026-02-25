@@ -5,27 +5,33 @@ import BookingModal from "../components/common/BookingModal";
 
 const steps = [
   {
-    label: "Order Ignite Fat Burner ",
-    desc: "Click Buy → complete secure checkout. ",
+    label: "Place Your Order",
+    desc: "Complete your payment securely.",
     value: "01",
     icon: "fa-user-plus",
   },
   {
-    label: " E-Book Sent Instantly ",
-    desc: "You get the Fitness Blueprint in your email immediately. Start reading — it tells you what to eat, when to move, and daily habit tips. ",
+    label: "Receive the Blueprint",
+    desc: "The Fitness Blueprint is sent instantly to your email.",
     value: "02",
     icon: "fa-book-open",
   },
   {
-    label: "Ignite Fat Burner Arrives ",
-    desc: `Product ships same / next Working day. ${" "} Delivery within 7 working days.`,
+    label: "Join Daily Live Sessions",
+    desc: "Start attending the daily 1-hour online training.",
     value: "03",
     icon: "fa-video",
   },
   {
-    label: " Follow the Blueprint + Use Ignite Fat Burner ",
-    desc: "Use Ignite Fat Burner daily, follow the simple nutritional plan from the e-book and track progress. Consistency = results. ",
+    label: "Receive Ignite",
+    desc: "Ignite Fat Burner is shipped to your address and delivered within 7-14 working days.",
     value: "04",
+    icon: "fa-box",
+  },
+  {
+    label: "Follow the System",
+    desc: "Use Ignite regularly, follow the blueprint, and attend live sessions consistently. Simple system. Clear direction. Better results.",
+    value: "05",
     icon: "fa-trophy",
   },
 ];
@@ -43,13 +49,12 @@ const MeetYourCoach = () => {
         {/* Title: Center Aligned */}
         <div className="text-center max-w-4xl mx-auto md:mb-8 sm:mb-12">
           <h2 className="sm:mb-12 mb-6 text-center font-heading text-4xl font-extrabold leading-tight lg:text-4xl">
-            
-            <span className="text-[#ff6600]">How Ignite Fat Burner Works </span>
+            <span className="text-[#ff6600]">How It Works</span>
           </h2>
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
-          {/* Vertical Line – Desktop only */}
+          {/* Vertical Line - Desktop only */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-100 -translate-x-1/2"></div>
 
           <div className="space-y-6">
@@ -60,7 +65,7 @@ const MeetYourCoach = () => {
                   index % 2 !== 0 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                {/* STEP CIRCLE – ALWAYS FIRST ON MOBILE */}
+                {/* STEP CIRCLE */}
                 <div className="relative z-10 sm:mb-6 mb-2 flex h-14 w-14 items-center justify-center rounded-full border-4 border-white bg-[#FF6600] text-xl font-black text-white shadow-[0_10px_25px_rgba(255,102,0,0.3)] sm:h-16 sm:w-16 sm:text-2xl md:mb-0">
                   {parseInt(step.value)}
                 </div>
@@ -87,21 +92,18 @@ const MeetYourCoach = () => {
                   </p>
                 </div>
 
-                {/* EMPTY SPACE – DESKTOP BALANCE ONLY */}
+                {/* EMPTY SPACE - DESKTOP BALANCE ONLY */}
                 <div className="hidden md:block md:w-1/2"></div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Minimal CTA */}
+        {/* CTA */}
         <div className="sm:mt-10 mt-6 text-center">
-          {/* <button className="bg-[#FF6600] text-white px-12 py-5 rounded-2xl font-black text-xl shadow-xl hover:bg-orange-600 transition-all active:scale-95">
-            START YOUR JOURNEY NOW
-          </button> */}
           <BoockBtn
             className="bg-[#FF6600] text-white px-12 sm:py-5 py-2 rounded-2xl font-black sm:text-xl text-lg shadow-xl hover:bg-orange-600 transition-all active:scale-95"
-            btnnamed={"Buy Ignite Fat Burner Now"}
+            btnnamed={"Start Transformation At just ₹649/-"}
             onClick={handleOpenBookingModal}
           />
         </div>
