@@ -1,99 +1,104 @@
-import React, { useState } from 'react';
-import Modal from './Modal';
-import Input from './Input';
-import AddressForm from './AddressForm';
-import { publicAxiosInstance } from '../../config/api';
-import apiConfig from '../../config/apiConfig';
+import React, { useState } from "react";
+import Modal from "./Modal";
+import Input from "./Input";
+import AddressForm from "./AddressForm";
+import { publicAxiosInstance } from "../../config/api";
+import apiConfig from "../../config/apiConfig";
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const BookingModal = ({ isOpen, onClose }) => {
   const [userDetails, setUserDetails] = useState({
-    name: '',
-    email: '',
-    mobile: '',
+    name: "",
+    email: "",
+    mobile: "",
+    preferred_time_slot: "",
   });
-  
+
   const [addressDetails, setAddressDetails] = useState({
-    full_address: '',
-    city: '',
-    state: '',
-    pincode: '',
+    full_address: "",
+    city: "",
+    state: "",
+    pincode: "",
   });
-  
+
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [isThankYouModalOpen, setIsThankYouModalOpen] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setUserDetails(prev => ({
+    setUserDetails((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
-    
+
     // Clear error when user types
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [name]: ''
+        [name]: "",
       }));
     }
   };
 
   const handleAddressChange = (e) => {
     const { name, value } = e.target;
-    setAddressDetails(prev => ({
+    setAddressDetails((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
-    
+
     // Clear error when user types
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [name]: ''
+        [name]: "",
       }));
     }
   };
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!userDetails.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = "Name is required";
     }
-    
+
     if (!userDetails.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(userDetails.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = "Email is invalid";
     }
-    
+
     if (!userDetails.mobile.trim()) {
-      newErrors.mobile = 'Mobile number is required';
+      newErrors.mobile = "Mobile number is required";
     } else if (!/^\d{10}$/.test(userDetails.mobile)) {
-      newErrors.mobile = 'Mobile number must be 10 digits';
+      newErrors.mobile = "Mobile number must be 10 digits";
     }
-    
+
+    if (!userDetails.preferred_time_slot) {
+      newErrors.preferred_time_slot = "Please select a time slot";
+    }
+
     if (!addressDetails.full_address.trim()) {
-      newErrors.full_address = 'Full address is required';
+      newErrors.full_address = "Full address is required";
     }
-    
+
     if (!addressDetails.city.trim()) {
-      newErrors.city = 'City is required';
+      newErrors.city = "City is required";
     }
-    
+
     if (!addressDetails.state.trim()) {
-      newErrors.state = 'State is required';
+      newErrors.state = "State is required";
     }
-    
+
     if (!addressDetails.pincode.trim()) {
-      newErrors.pincode = 'Pincode is required';
+      newErrors.pincode = "Pincode is required";
     } else if (!/^\d{6}$/.test(addressDetails.pincode)) {
-      newErrors.pincode = 'Pincode must be 6 digits';
+      newErrors.pincode = "Pincode must be 6 digits";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -113,31 +118,35 @@ const BookingModal = ({ isOpen, onClose }) => {
           try {
             // Show immediate confirmation
             setLoading(true);
-            
-            const result = await publicAxiosInstance.post('/guest-payment/online-combo-booking', {
-              payment_id: response.razorpay_payment_id,
-              name: userDetails.name,
-              email: userDetails.email,
-              mobile: userDetails.mobile,
-              full_address: addressDetails.full_address,
-              city: addressDetails.city,
-              state: addressDetails.state,
-              pincode: addressDetails.pincode,
-            });
+
+            const result = await publicAxiosInstance.post(
+              "/guest-payment/online-combo-booking",
+              {
+                payment_id: response.razorpay_payment_id,
+                name: userDetails.name,
+                email: userDetails.email,
+                mobile: userDetails.mobile,
+                full_address: addressDetails.full_address,
+                city: addressDetails.city,
+                state: addressDetails.state,
+                pincode: addressDetails.pincode,
+                preferred_time_slot: userDetails.preferred_time_slot,
+              },
+            );
 
             if (result.data.success || result.data.status === 200) {
               onClose();
-              // Reset form fields after successful payment
               setUserDetails({
-                name: '',
-                email: '',
-                mobile: '',
+                name: "",
+                email: "",
+                mobile: "",
+                preferred_time_slot: "",
               });
               setAddressDetails({
-                full_address: '',
-                city: '',
-                state: '',
-                pincode: '',
+                full_address: "",
+                city: "",
+                state: "",
+                pincode: "",
               });
               setErrors({});
               setIsThankYouModalOpen(true);
@@ -147,7 +156,7 @@ const BookingModal = ({ isOpen, onClose }) => {
             setLoading(false);
             alert(
               error.response?.data?.message ||
-              "Payment verification failed. Please contact support."
+                "Payment verification failed. Please contact support.",
             );
           }
         },
@@ -164,7 +173,9 @@ const BookingModal = ({ isOpen, onClose }) => {
       const rzp = new window.Razorpay(options);
       rzp.open();
     } catch (error) {
-      alert(error.response?.data?.message || "Payment failed. Please try again.");
+      alert(
+        error.response?.data?.message || "Payment failed. Please try again.",
+      );
     } finally {
       setLoading(false);
     }
@@ -172,15 +183,15 @@ const BookingModal = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add('booking-modal-open');
+      document.body.classList.add("booking-modal-open");
       // Clear any previous errors when opening
       setErrors({});
     } else {
-      document.body.classList.remove('booking-modal-open');
+      document.body.classList.remove("booking-modal-open");
     }
-    
+
     return () => {
-      document.body.classList.remove('booking-modal-open');
+      document.body.classList.remove("booking-modal-open");
     };
   }, [isOpen]);
 
@@ -188,15 +199,16 @@ const BookingModal = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (!isOpen) {
       setUserDetails({
-        name: '',
-        email: '',
-        mobile: '',
+        name: "",
+        email: "",
+        mobile: "",
+        preferred_time_slot: "",
       });
       setAddressDetails({
-        full_address: '',
-        city: '',
-        state: '',
-        pincode: '',
+        full_address: "",
+        city: "",
+        state: "",
+        pincode: "",
       });
       setErrors({});
     }
@@ -237,9 +249,11 @@ const BookingModal = ({ isOpen, onClose }) => {
                   value={userDetails.name}
                   onChange={handleInputChange}
                   placeholder="Enter your full name"
-                  className={`w-full h-12 px-4 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 ${errors.name ? 'border-red-500' : ''}`}
+                  className={`w-full h-12 px-4 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 ${errors.name ? "border-red-500" : ""}`}
                 />
-                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                {errors.name && (
+                  <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+                )}
               </div>
 
               <div>
@@ -252,9 +266,11 @@ const BookingModal = ({ isOpen, onClose }) => {
                   value={userDetails.email}
                   onChange={handleInputChange}
                   placeholder="Enter your email"
-                  className={`w-full h-12 px-4 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 ${errors.email ? 'border-red-500' : ''}`}
+                  className={`w-full h-12 px-4 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 ${errors.email ? "border-red-500" : ""}`}
                 />
-                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                {errors.email && (
+                  <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                )}
               </div>
 
               <div>
@@ -270,43 +286,88 @@ const BookingModal = ({ isOpen, onClose }) => {
                   maxLength={10}
                   pattern="[0-9]*"
                   inputMode="numeric"
-                  className={`w-full h-12 px-4 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 ${errors.mobile ? 'border-red-500' : ''}`}
+                  className={`w-full h-12 px-4 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 ${errors.mobile ? "border-red-500" : ""}`}
                 />
-                {errors.mobile && <p className="text-red-500 text-xs mt-1">{errors.mobile}</p>}
+                {errors.mobile && (
+                  <p className="text-red-500 text-xs mt-1">{errors.mobile}</p>
+                )}
               </div>
             </div>
 
             <div className="mt-6">
-              <h4 className="text-sm font-medium text-gray-700 mb-3">Address Details</h4>
-              <AddressForm 
-                addressDetails={addressDetails} 
-                onAddressChange={handleAddressChange} 
+              <label className="block text-sm font-medium text-gray-800 mb-2">
+                Choose Your Preferred Live Training Batch
+              </label>
+              <select
+                name="preferred_time_slot"
+                value={userDetails.preferred_time_slot}
+                onChange={handleInputChange}
+                className={`w-full h-12 px-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-200 focus:border-orange-500 text-gray-900 ${errors.preferred_time_slot ? "border-red-500" : ""}`}
+              >
+                <option value="">Select a batch</option>
+                <option value="Morning Batch – 6:00 AM to 7:00 AM">
+                  Morning Batch – 6:00 AM to 7:00 AM
+                </option>
+                <option value="Evening Batch – 6:00 PM to 7:00 PM">
+                  Evening Batch – 6:00 PM to 7:00 PM
+                </option>
+              </select>
+              {errors.preferred_time_slot && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.preferred_time_slot}
+                </p>
+              )}
+            </div>
+
+            <div className="mt-6">
+              <h4 className="text-sm font-medium text-gray-700 mb-3">
+                Address Details
+              </h4>
+              <AddressForm
+                addressDetails={addressDetails}
+                onAddressChange={handleAddressChange}
                 errors={errors}
               />
             </div>
 
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <p className="text-sm text-gray-500">
-                🔒 100% • Secure payment 
-              </p>
+              <p className="text-sm text-gray-500">🔒 100% • Secure payment</p>
               <button
                 onClick={handlePayment}
                 disabled={loading}
                 className={`px-6 py-2 rounded-xl font-medium shadow-md transition flex items-center justify-center ${
-                  loading 
-                    ? 'bg-gray-400 cursor-not-allowed' 
-                    : 'bg-orange-600 hover:bg-orange-700 text-white'
+                  loading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-orange-600 hover:bg-orange-700 text-white"
                 }`}
               >
                 {loading ? (
                   <>
-                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    <svg
+                      className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
                     </svg>
                     Processing...
                   </>
-                ) : "Pay ₹649"}
+                ) : (
+                  "Pay ₹649"
+                )}
               </button>
             </div>
           </div>
@@ -316,7 +377,7 @@ const BookingModal = ({ isOpen, onClose }) => {
       <Modal
         isOpen={isThankYouModalOpen}
         onClose={() => {
-          document.body.classList.remove('booking-modal-open');
+          document.body.classList.remove("booking-modal-open");
           setIsThankYouModalOpen(false);
         }}
         title="Thank you!"
@@ -340,10 +401,11 @@ const BookingModal = ({ isOpen, onClose }) => {
             You're all set!
           </h3>
           <p className="text-sm text-gray-800 max-w-sm">
-            Payment received. Our team will reach out to you shortly with course access details.
+            Payment received. Our team will reach out to you shortly with course
+            access details.
           </p>
           <div className="w-full flex justify-center">
-            <button 
+            <button
               onClick={() => setIsThankYouModalOpen(false)}
               className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700"
             >
