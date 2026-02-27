@@ -4,13 +4,18 @@ import BoockBtn from "../components/common/BoockBtn";
 import BookingModal from "../components/common/BookingModal";
 
 const Footer = () => {
-  const [shouldHide, setShouldHide] = useState(false);
+  const [isNearFinalCta, setIsNearFinalCta] = useState(false);
+  const [isAnyModalOpen, setIsAnyModalOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
+  // Compute shouldHide from all independent conditions
+  const shouldHide = isNearFinalCta || isAnyModalOpen || isBookingModalOpen;
+
+  // Hide footer when scrolled to #final-cta section
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setShouldHide(entry.isIntersecting);
+        setIsNearFinalCta(entry.isIntersecting);
       },
       { threshold: 0.1, rootMargin: "0px 0px 50px 0px" },
     );
@@ -23,21 +28,10 @@ const Footer = () => {
     };
   }, []);
 
-  // When booking modal is open, hide the footer
-  useEffect(() => {
-    if (isBookingModalOpen) {
-      setShouldHide(true); // Hide the footer when modal is open
-    } else {
-      setShouldHide(false); // Show the footer when modal is closed
-    }
-  }, [isBookingModalOpen]);
-
-  // Also observe if any booking modal is open on the page
+  // Observe if any booking modal is open on the page (from any section)
   useEffect(() => {
     const handleClassChange = () => {
-      if (document.body.classList.contains("booking-modal-open")) {
-        setShouldHide(true); // Hide the footer when any modal is open
-      }
+      setIsAnyModalOpen(document.body.classList.contains("booking-modal-open"));
     };
 
     const mutationObserver = new MutationObserver(handleClassChange);

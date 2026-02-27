@@ -135,8 +135,7 @@ const HeroSection = () => {
               </p>
 
               <p className="font-semibold mt-2 text-center text-xl">
-                • Free delivery within 7-14 working days. <br />
-                • Secure checkout.
+                Get FREE fast delivery & start your transformation! with 100% secure checkout.
               </p>
             </div>
 
@@ -197,8 +196,7 @@ const HeroSection = () => {
               ₹649/-{ " " }
             </p>
             <p className="font-semibold mt-2 text-center text-xl">
-              {/* Free shipping  Delivery within 7 working days • Secure payment */ }
-              • Free delivery within 7-14 working days. <br />• Secure checkout.
+              Get FREE fast delivery & start your transformation! with 100% secure checkout.
             </p>
             <BoockBtn
               className="relative mt-4 inline-flex w-[100%] max-w-[100%] items-center justify-center rounded-xl bg-primary px-10 py-4 sm:text-2xl text-sm md:text-xl font-bold text-white shadow-card md:mx-0"

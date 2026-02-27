@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../components/layout/Container";
 
 const items = [
-  "Lose 4 to 5 kg ",
+  "Lose 4 to 5 kg per month",
   "Reduce belly fat & tone the body",
   "Build healthy eating habits",
   "Increase confidence & energy",

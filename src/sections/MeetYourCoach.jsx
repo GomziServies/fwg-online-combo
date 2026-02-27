@@ -29,8 +29,8 @@ const steps = [
     icon: "fa-box",
   },
   {
-    label: "Follow the System",
-    desc: "Use Ignite regularly, follow the blueprint, and attend live sessions consistently. Simple system. Clear direction. Better results.",
+    label: "Get Your Personalized Diet Plan on the App",
+    desc: "Access a tailored diet plan right on your phone easy to follow, designed to boost your results and keep you on track.",
     value: "05",
     icon: "fa-trophy",
   },
