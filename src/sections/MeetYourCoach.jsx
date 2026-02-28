@@ -34,6 +34,12 @@ const steps = [
     value: "05",
     icon: "fa-trophy",
   },
+  {
+    label: "Follow the System",
+    desc: "Use Ignite regularly, follow the blueprint, and attend live sessions consistently. Simple system. Clear direction. Better results.",
+    value: "06",
+    icon: "fa-list-check",
+  },
 ];
 
 const MeetYourCoach = () => {
