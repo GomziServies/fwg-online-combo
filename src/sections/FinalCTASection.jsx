@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Container from "../components/layout/Container";
 import BoockBtn from "../components/common/BoockBtn";
 import BookingModal from "../components/common/BookingModal";
@@ -49,9 +50,9 @@ const FinalCTASection = () => {
 
           {/* Policy links */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
-            <a href="/privacy-policy" className="hover:underline">
+            <Link to="/privacy-policy" className="hover:underline">
               Privacy & Policy
-            </a>
+            </Link>
           </div>
         </div>
       </Container>

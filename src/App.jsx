@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -18,6 +18,16 @@ import DetailedProductBlock from "./sections/DetailedProductBlock";
 import PrivacyPolicy from "./sections/PrivacyPolicy";
 import WhyBuyToday from "./components/common/WhyBuyToday";
 import BookingModal from "./components/common/BookingModal";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname]);
+
+  return null;
+};
 
 const LandingPage = () => {
   return (
@@ -71,6 +81,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
 
       {/* ── WhyBuyToday button click → BookingModal open ── */}
       <WhyBuyToday handleOpenBookingModal={handleOpenBookingModal} />
